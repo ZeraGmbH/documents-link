@@ -1,85 +1,70 @@
-from os.path import exists
-from database import IDatabase
-import io
-import os
+
+from abc import ABC, abstractmethod
+
+class IDatabase(ABC):
+
+    """!
+    Database interfasce class
+
+    Defines database behaviour. The database caches data found on the shared drives.
+    The cached data are the files found and the invalid links found inside these files.
+
+    For each implementation of this interface unittests should be created.
+    Please make sure to test all exceptions too.
+    """
 
 
-def FileTable():
-    return os.path.abspath(os.path.join(os.path.dirname( __file__ ), '..', 'database',"FileTable.txt"))
+    @abstractmethod
+    def open(self,database):
+        """!
+        Opens existing database or creates new one if db does not exist
 
-def InvalidLinks():
-    return os.path.abspath(os.path.join(os.path.dirname( __file__ ), '..', 'database',"InvalidLinks.txt"))
+        @param database  Database connection information
+        For example filePath for txt or json file implementation
 
+        @return true if succeeds
 
-class databaseOpenRequest:
-    text_file_database : str
-    invalid_link_database : str
+        @throws IllegalArgumentException
+        The database object can be of different types depending on the used database
+        implementation. If the databaseparameter does not provide the needed information 
+        the exception will be thrown
+        """
+        pass
 
-
-class TextFileDatabase(IDatabase.IDatabase):
-
-    def __init__(self):
-        super().__init__()
-        self.text_file_database = io.StringIO("")
-        self.invalid_link_database = io.StringIO("")
-        self.invalid_link_database.close()
-        self.text_file_database.close()
-    
-    def open(self,database : databaseOpenRequest):
-        if type(database) is not databaseOpenRequest:
-            raise ValueError("Invalid database type")
-
-        self.text_file_database = FileTable()
-        self.invalid_link_database = InvalidLinks()
-
-        # check whether given database exit or not.
-        if exists(self.text_file_database):
-            self.text_file_database = open(self.text_file_database, "a+")
-        else:
-            open(self.text_file_database, "w+")
-
-        if exists(self.invalid_link_database):
-            self.invalid_link_database = open(self.invalid_link_database, "a+")
-        else:
-            open(self.invalid_link_database, "w+")
-
-        return True
-
-   
+    @abstractmethod
     def close(self):
-        f1 = self.text_file_database
-        f2 = self.invalid_link_database
-        try:
-            f1.close()
-            f2.close()
-            return True
-        except:
-            return False
-   
+        """!
+        Close open database
+
+        @return true if database was open false otherwise
+        """
+        pass
+    
+    @abstractmethod
     def isOpen(self):
-        if not self.text_file_database.closed or not self.invalid_link_database.closed:
-            return True
+        """!
+        Returns status of database
 
-        else:
-            return False
-        
+        @return true if open false otherwise
+        """
+        pass
+
+    @abstractmethod
     def add_filePath(self,path):
-        if not self.text_file_database.closed:
-            if self.contains_filePath(path) == False:
-                self.text_file_database.write(path + "\n")
-            return path
-        else:
-            raise RuntimeError("database is not open")
+        """!
+        Adds file path to database
+        e.g. /s-zera-stor01/..../File1.docx
 
+        @Param path  The absolute filepath
 
-    def remove_filePath(self,path): ## and truncate
-        if not self.text_file_database.closed:
-            pass
-        else:
-            raise RuntimeError("database is not open")
+        @return unique id to indentify file path. Can be file path
 
-
-
+        @throw RuntimeError if database is not open
+        """
+        pass
+    
+    @abstractmethod
+    def remove_filePath(self,path):
         """!
         Remove file path from database
         e.g. /s-zera-stor01/..../File1.docx
@@ -95,27 +80,23 @@ class TextFileDatabase(IDatabase.IDatabase):
 
         @throw RuntimeError if database is not open
         """
+        pass
 
-
+    @abstractmethod 
     def contains_filePath(self,path):
-        if not self.text_file_database.closed:
-            with open(self.text_file_database.name) as f:
-                if path in str([line.rstrip('\n') for line in f]):
-                    return True
-                else:
-                    return False
-        else:
-            raise RuntimeError("database is not open")
+        """!
+        Return true if path is stored in database
 
+        @param path  The expected path 
 
+        @return true if path was found false othwerwise
+
+        @throw RuntimeError if database is not open
+        """
+        pass
+    
+    @abstractmethod
     def get_all_Path(self):
-        if not self.text_file_database.closed:
-            with open(self.text_file_database.name) as f:
-                data_into_list = f.read().split("\n")
-            return data_into_list
-        else:
-            raise RuntimeError("database is not open")
-
         """!
         Return list with all stored path
 
@@ -123,13 +104,13 @@ class TextFileDatabase(IDatabase.IDatabase):
 
         @throw RuntimeError if database is not open
         """
+        pass
 
-
+    @abstractmethod
     def add_invalidLink(self,path,link):
-
         """!
         Add invalid link to database
-        The link is assigned to the file where it was found in.
+        The link is assigned to the file where it was foiund in.
 
         @param path  file that contains invlaid link
         @param link  the invalid link itself
@@ -140,7 +121,7 @@ class TextFileDatabase(IDatabase.IDatabase):
         """
         pass
 
-
+    @abstractmethod
     def remove_invalidLink(self,path,link):
         """!
         Remove invalid link from database
@@ -163,7 +144,7 @@ class TextFileDatabase(IDatabase.IDatabase):
         """
         pass
 
-
+    @abstractmethod
     def contains_invalidLink(self,path,link):
         """!
         Return true if invalid link is stored for path in db
@@ -181,7 +162,7 @@ class TextFileDatabase(IDatabase.IDatabase):
         """
         pass
 
-
+    @abstractmethod
     def get_invalid_links(self,path):
         """!
         Return list with all invalid links stored for file path
@@ -194,7 +175,7 @@ class TextFileDatabase(IDatabase.IDatabase):
         """
         pass
 
-
+    @abstractmethod
     def get_all_invalid_links(self):
         """!
         Returns set with all invalid links found independet from file path 
@@ -205,7 +186,7 @@ class TextFileDatabase(IDatabase.IDatabase):
         """
         pass
 
-
+    @abstractmethod
     def remove_all_occurence_of_invalid_link(self,link):
         """!
         Removes all occurences of an invlaid link from database
