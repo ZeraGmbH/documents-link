@@ -1,42 +1,50 @@
 from os.path import exists
 from operator import contains
 
-from hawkey import ValueException
-from database import IDatabase
-
-import io
-
-class databaseOpenRequest:
-    text_file_database : str
-    invalid_link_database : str
 
 
-class TextFileDatabase(IDatabase.IDatabase):
+class TextFileDatabase():
 
-    def __init__(self) -> None:
-        super().__init__()
-        self.text_file_database=io.StringIO("")
-        self.invalid_link_database=io.StringIO("")
-        self.invalid_link_database.close()
-        self.text_file_database.close()
-    
-    def open(self,database : databaseOpenRequest):
-        if type(database) is not databaseOpenRequest:
-            raise ValueError("Invalid database type")
-        self.text_file_database = database.text_file_database
-        self.invalid_link_database = database.invalid_link_database
+    """!
+    Database interfasce class
+
+    Defines database behaviour. The database caches data found on the shared drives.
+    The cached data are the files found and the invalid links found inside these files.
+
+    For each implementation of this interface unittests should be created.
+    Please make sure to test all exceptions too.
+    """
+
+
+    def open(self,text_file_database, invalid_link_database):
         # check whether given database exit or not.
-        if exists(self.text_file_database):
-            self.text_file_database = open(self.text_file_database, "a+")
+        if exists(text_file_database):
+            self.text_file_database = open(text_file_database, "a+")
         else:
-            open(self.text_file_database, "w+")
+            open(text_file_database, "w+")
 
-        if exists(self.invalid_link_database):
-            self.invalid_link_database = open(self.invalid_link_database, "a+")
+        if exists(invalid_link_database):
+            self.invalid_link_database = open(invalid_link_database, "a+")
         else:
-            open(self.invalid_link_database, "w+")
+            open(invalid_link_database, "w+")
 
         return True
+
+
+        """!
+        Opens existing database or creates new one if db does not exist
+
+        @param database  Database connection information
+        For example filePath for txt or json file implementation
+
+        @return true if succeeds
+
+        @throws IllegalArgumentException
+        The database object can be of different types depending on the used database
+        implementation. If the databaseparameter does not provide the needed information 
+        the exception will be thrown
+        """
+
 
    
     def close(self):
@@ -48,21 +56,50 @@ class TextFileDatabase(IDatabase.IDatabase):
             return True
         except:
             return False
+
+        
+
+        """!
+        Close open database
+
+        @return true if database was open false otherwise
+        """
+    
    
     def isOpen(self):
-        if not self.text_file_database.closed or not self.invalid_link_database.closed:
+        if not self.text_file_database.close() or not self.invalid_link_database.close():
             return True
 
         else:
             return False
+
+        """!
+        Returns status of database
+
+        @return true if open false otherwise false
+        """
         
+
+   
     def add_filePath(self,path):
-        if not self.text_file_database.closed:
+        if not self.text_file_database.close():
             self.text_file_database.write(path)
             return path
         else:
-            raise RuntimeError("database is not open")
+            return "database is not open"
 
+        """!
+        Adds file path to database
+        e.g. /s-zera-stor01/..../File1.docx
+
+        @Param path  The absolute filepath
+
+        @return unique id to indentify file path. Can be file path
+
+        @throw RuntimeError if database is not open
+        """
+        pass
+    
 
     def remove_filePath(self,path): ## and truncate
         """!
