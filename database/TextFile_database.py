@@ -27,11 +27,11 @@ class TextFileDatabase(IDatabase.IDatabase):
             raise ValueError("Invalid database type")
 
         
-        self.text_file_database = open(database.text_file_database_name, "w+")
-        self.text_file_database.seek(0)
-        
-        self.invalid_link_database = open(database.invalid_link_database_name, "w+")
-        self.invalid_link_database.seek(0)
+        self.text_file_database = open(database.text_file_database_name, "r+")
+        self.invalid_link_database = open(database.invalid_link_database_name, "r+")
+        # self.text_file_database = open(database.text_file_database_name, "w+")
+        # self.invalid_link_database = open(database.invalid_link_database_name, "w+")
+        self.__reinit_file_access()
         return True
 
     def close(self):
@@ -48,71 +48,69 @@ class TextFileDatabase(IDatabase.IDatabase):
             return False
         
     def add_filePath(self,path):
-        if not self.text_file_database.closed:
-            if self.contains_filePath(path) == False:
-                self.text_file_database.write(path + "\n")
-            return path
-        else:
-            raise RuntimeError("database is not open")
+        self.__throw_if_database_is_closed()
+        if self.contains_filePath(path) == False:
+            self.text_file_database.write(path + "\n")
+        return path
+
 
     def remove_filePath(self,path):
         ##remove path
-        if not self.text_file_database.closed:
-            if self.contains_filePath(path) == True:
-                lines = self.text_file_database.readlines()
-                lines.remove(path + "\n")
-                with open(self.invalid_link_database.name, "w+") as new_f:
-                    for line in lines:        
-                        new_f.write(line)
+        self.__throw_if_database_is_closed()
+        self.__reinit_file_access()
+        if self.contains_filePath(path) == True:
+            self.text_file_database.seek(0)
+            lines = self.text_file_database.readlines()
+            lines.remove(path + "\n")
+            ##remove path
+            self.__reinit_file_access()
+            self.text_file_database.truncate()
+            for line in lines:        
+                self.text_file_database.write(line)
 
         ## remove invalid links assigned to this path
-        if not self.invalid_link_database.closed:
-            invalid_links = self.get_invalid_links(path)
-            i = 0
-            len_link = len(invalid_links)
-            while i < len_link:
-                lines = self.invalid_link_database.readlines()
-                lines.remove(invalid_links[i] + "\n")
-                with open(self.invalid_link_database.name, "w+") as new_f:
-                    for line in lines:        
-                        new_f.write(line)
-                if i == len_link:
-                    break
-                i +=1
-            return path
-        else:
-            raise RuntimeError("database is not open")
+        self.__reinit_file_access()
+        invalid_links = self.get_invalid_links(path)
+        i = 0
+        len_link = len(invalid_links)
+        while i < len_link:
+            lines = self.invalid_link_database.readlines()
+            lines.remove(invalid_links[i] + "\n")
+            self.__reinit_file_access()
+            self.invalid_link_database.truncate()
+            for line in lines:        
+                self.invalid_link_database.write(line)
+            if i == len_link:
+                break
+            i +=1
+        return path
 
     def contains_filePath(self,path):
-        if not self.text_file_database.closed:
-            lines = self.text_file_database.readlines()
-            for line in lines:
-                if line == path + "\n":
-                    return True
-            else:
-                return False
-                
+        self.__throw_if_database_is_closed()
+        lines = self.text_file_database.readlines()
+        for line in lines:
+            if line == path + "\n":
+                return True
         else:
-            raise RuntimeError("database is not open")
+            return False
+
 
     def get_all_Path(self):
-        if not self.text_file_database.closed:
-            with open(self.text_file_database.name) as f:
-                data_into_list = f.read().split("\n")
-            return data_into_list
-        else:
-            raise RuntimeError("database is not open")
+        self.__throw_if_database_is_closed()
+        self.__reinit_file_access()
+        lines=self.text_file_database.readlines()
+        return self.__remove_line_breaks(lines)
+
 
     def add_invalidLink(self,path,link):
         path_link = str(path) + "," + str(link)
-        if not self.text_file_database.closed:
-            if self.contains_filePath(link) == False:
-                if not self.invalid_link_database.closed:
-                    if self.contains_invalidLink(path,link) == False:
-                        self.invalid_link_database.write(path_link + "\n")
-                    return path_link
-        else:
-            raise RuntimeError("database is not open")
+        self.__throw_if_database_is_closed()
+        if self.contains_filePath(link) == False:
+            if not self.invalid_link_database.closed:
+                if self.contains_invalidLink(path,link) == False:
+                    self.invalid_link_database.write(path_link + "\n")
+                return link
+
 
     def remove_invalidLink(self,path,link):
         """!
@@ -138,35 +136,30 @@ class TextFileDatabase(IDatabase.IDatabase):
 
 
     def contains_invalidLink(self,path,link):
-        if not self.invalid_link_database.closed:
-            with open(self.invalid_link_database.name) as f:
-                path_link = str(path) + "," + str(link)
-                if path_link in str([line.rstrip('\n') for line in f]):
-                    return True
-                else:
-                    return False
+        self.__throw_if_database_is_closed()
+        self.__reinit_file_access()
+        path_link = str(path) + "," + str(link)
+        if path_link in str([line.rstrip('\n') for line in self.invalid_link_database]):
+            return True
         else:
-            raise RuntimeError("database is not open")
+            return False
 
     def get_invalid_links(self,path):
-        if not self.invalid_link_database.closed:
-            all_link = []
-            with open(self.invalid_link_database.name) as searchfile:
-                for line in searchfile:
-                    if path in line:
-                        all_link.append(line.replace("\n",""))
-                return all_link
-
-        else:
-            raise RuntimeError("database is not open")
+        self.__throw_if_database_is_closed()
+        all_link = []
+        self.__reinit_file_access()
+        for line in self.invalid_link_database:
+            if path in line:
+                all_link.append(line)
+        return set(self.__extract_invalid_links(self.__remove_line_breaks(all_link)))
 
     def get_all_invalid_links(self):
-        if not self.invalid_link_database.closed:
-            with open(self.invalid_link_database.name) as f:
-                data_into_list = f.read().split("\n")
-            return set(data_into_list)
-        else:
-            raise RuntimeError("database is not open")
+        self.__throw_if_database_is_closed()
+        self.__reinit_file_access()
+        lines=self.invalid_link_database.readlines()
+        return set(self.__extract_invalid_links(self.__remove_line_breaks(lines)))
+        
+
 
     def remove_all_occurence_of_invalid_link(self,link):
         """!
@@ -183,3 +176,26 @@ class TextFileDatabase(IDatabase.IDatabase):
         @throw RuntimeError if database is not open
         """
         pass
+
+    def __remove_line_breaks(self,entries):
+        result=[]
+        for entry in entries:
+            result.append(entry.rstrip('\n'))
+        return result
+
+    def __reinit_file_access(self):
+        self.text_file_database.seek(0)
+        self.invalid_link_database.seek(0)
+
+    def __throw_if_database_is_closed(self):
+        if self.isOpen() == False:
+            raise RuntimeError("database is not open")
+
+    def __extract_invalid_links(self,entries):
+        result=[]
+        try:
+            for entry in entries:
+                result.append(entry.split(r',')[1])
+        except:
+            reuslt=list()
+        return result
