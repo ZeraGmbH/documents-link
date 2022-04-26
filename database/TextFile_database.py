@@ -19,8 +19,16 @@ class TextFileDatabase(IDatabase.IDatabase):
         if type(database) is not databaseOpenRequest:
             raise ValueError("Invalid database type")
 
+<<<<<<< HEAD
         self.text_file_database = open(database.text_file_database_name, "r+")
         self.invalid_link_database = open(database.invalid_link_database_name, "r+")
+=======
+        
+        self.text_file_database = open(database.text_file_database_name, "r+")
+        self.invalid_link_database = open(database.invalid_link_database_name, "r+")
+        # self.text_file_database = open(database.text_file_database_name, "w+")
+        # self.invalid_link_database = open(database.invalid_link_database_name, "w+")
+>>>>>>> b3ecdf422f05be63cfd61ed070362ffb814d53da
         self.__reinit_file_access()
         return True
 
@@ -42,6 +50,10 @@ class TextFileDatabase(IDatabase.IDatabase):
         if self.contains_filePath(path) == False:
             self.text_file_database.write(path + "\n")
         return path
+<<<<<<< HEAD
+=======
+
+>>>>>>> b3ecdf422f05be63cfd61ed070362ffb814d53da
 
     def remove_filePath(self,path):
         ##remove path
@@ -51,6 +63,10 @@ class TextFileDatabase(IDatabase.IDatabase):
             self.text_file_database.seek(0)
             lines = self.text_file_database.readlines()
             lines.remove(path + "\n")
+<<<<<<< HEAD
+=======
+            ##remove path
+>>>>>>> b3ecdf422f05be63cfd61ed070362ffb814d53da
             self.__reinit_file_access()
             self.text_file_database.truncate()
             for line in lines:        
@@ -58,6 +74,7 @@ class TextFileDatabase(IDatabase.IDatabase):
 
         ## remove invalid links assigned to this path
         self.__reinit_file_access()
+<<<<<<< HEAD
         invalid_links = list(self.get_invalid_links(path))
         i = 0
         len_link = len(invalid_links)
@@ -65,6 +82,14 @@ class TextFileDatabase(IDatabase.IDatabase):
             self.invalid_link_database.seek(0)
             lines = self.invalid_link_database.readlines()
             lines.remove(path + "," + invalid_links[i] + "\n")
+=======
+        invalid_links = self.get_invalid_links(path)
+        i = 0
+        len_link = len(invalid_links)
+        while i < len_link:
+            lines = self.invalid_link_database.readlines()
+            lines.remove(invalid_links[i] + "\n")
+>>>>>>> b3ecdf422f05be63cfd61ed070362ffb814d53da
             self.__reinit_file_access()
             self.invalid_link_database.truncate()
             for line in lines:        
@@ -82,12 +107,20 @@ class TextFileDatabase(IDatabase.IDatabase):
                 return True
         else:
             return False
+<<<<<<< HEAD
+=======
+
+>>>>>>> b3ecdf422f05be63cfd61ed070362ffb814d53da
 
     def get_all_Path(self):
         self.__throw_if_database_is_closed()
         self.__reinit_file_access()
         lines=self.text_file_database.readlines()
         return self.__remove_line_breaks(lines)
+<<<<<<< HEAD
+=======
+
+>>>>>>> b3ecdf422f05be63cfd61ed070362ffb814d53da
 
     def add_invalidLink(self,path,link):
         path_link = str(path) + "," + str(link)
@@ -96,7 +129,12 @@ class TextFileDatabase(IDatabase.IDatabase):
             if not self.invalid_link_database.closed:
                 if self.contains_invalidLink(path,link) == False:
                     self.invalid_link_database.write(path_link + "\n")
+<<<<<<< HEAD
         return link
+=======
+                return link
+
+>>>>>>> b3ecdf422f05be63cfd61ed070362ffb814d53da
 
     def remove_invalidLink(self,path,link):
         ## remove invalid list
@@ -146,6 +184,7 @@ class TextFileDatabase(IDatabase.IDatabase):
     def get_all_invalid_links(self):
         self.__throw_if_database_is_closed()
         self.__reinit_file_access()
+<<<<<<< HEAD
         lines = self.invalid_link_database.readlines()
         return set(self.__extract_invalid_links(self.__remove_line_breaks(lines)))
     
@@ -186,6 +225,43 @@ class TextFileDatabase(IDatabase.IDatabase):
         if self.isOpen() == False:
             raise RuntimeError("database is not open")
 
+=======
+        lines=self.invalid_link_database.readlines()
+        return set(self.__extract_invalid_links(self.__remove_line_breaks(lines)))
+        
+
+
+    def remove_all_occurence_of_invalid_link(self,link):
+        """!
+        Removes all occurences of an invlaid link from database
+
+        Neither get_invalid_links nor get_all_invalid_links will return 
+        this link after this function call
+
+        @param the link to remove from the entire database
+        e.g /s-zera-stor01/..../File2.docx
+        
+        @returns unique id of link. Can be link itself
+
+        @throw RuntimeError if database is not open
+        """
+        pass
+
+    def __remove_line_breaks(self,entries):
+        result=[]
+        for entry in entries:
+            result.append(entry.rstrip('\n'))
+        return result
+
+    def __reinit_file_access(self):
+        self.text_file_database.seek(0)
+        self.invalid_link_database.seek(0)
+
+    def __throw_if_database_is_closed(self):
+        if self.isOpen() == False:
+            raise RuntimeError("database is not open")
+
+>>>>>>> b3ecdf422f05be63cfd61ed070362ffb814d53da
     def __extract_invalid_links(self,entries):
         result=[]
         try:
@@ -193,4 +269,8 @@ class TextFileDatabase(IDatabase.IDatabase):
                 result.append(entry.split(r',')[1])
         except:
             reuslt=list()
+<<<<<<< HEAD
         return result
+=======
+        return result
+>>>>>>> b3ecdf422f05be63cfd61ed070362ffb814d53da
