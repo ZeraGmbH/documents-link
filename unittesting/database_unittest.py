@@ -33,7 +33,7 @@ class Test(unittest.TestCase):
         return super().setUp()
 
     def tearDown(self):
-        shutil.rmtree('test_folder/txt_file_database_test/tmp')
+        #shutil.rmtree('test_folder/txt_file_database_test/tmp')
         return super().tearDown()
 
     def test_1_OpenDatabase(self):
@@ -223,6 +223,18 @@ class Test(unittest.TestCase):
         the_exception = context.exception
         self.assertTrue("database is not open" in the_exception.args)
 
+    def test_29_clean_text_file_database(self):
+        DatabaseOpen = self.db.open()
+        self.assertTrue(DatabaseOpen)
+        clean_text_file_databas = self.db.clean_clean_text_file_database()
+        self.assertTrue(clean_text_file_databas)
+
+    def test_30_clean_invalid_link_database(self):
+        DatabaseOpen = self.db.open()
+        self.assertTrue(DatabaseOpen)
+        clean_invalid_link_database = self.db.clean_invalid_link_database()
+        self.assertTrue(clean_invalid_link_database)
+        pass
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)

@@ -6,10 +6,10 @@ from document_links.database import TextFile_database
 from document_links.database.TextFile_database import TextFileDatabase
 
 def FileTable():
-        return os.path.abspath(os.path.join(os.path.dirname( __file__ ), '~/','txt_file_database_test',"FileTable.txt"))
+        return os.path.abspath(os.path.join(os.path.dirname( __file__ ),'windows_tool_data',"FileTable.txt"))
 
 def InvalidLinks():
-    return os.path.abspath(os.path.join(os.path.dirname( __file__ ), '~/','txt_file_database_test',"InvalidLinks.txt"))
+    return os.path.abspath(os.path.join(os.path.dirname( __file__ ), 'windows_tool_data',"InvalidLinks.txt"))
 
 def show_help():
     #TODO
@@ -21,6 +21,7 @@ def isCommand(commandlist,command):
         'update-filetable',
         'clean-filetable',
         'check-links',
+        'windows-check-links',
         'store-credentials'
     ]
     return command in commandlist
@@ -36,6 +37,7 @@ def main(args):
         'update-filetable' : document_links_api.update_filetable,
         'clean-filetable' : document_links_api.clean_filetable,
         'check-links' : document_links_api.check_links,
+        'windows-check-links' : document_links_api.windows_check_links,
         'store-credentials' : document_links_api.store_credentials
     }
 

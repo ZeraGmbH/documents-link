@@ -4,7 +4,7 @@ class db_spy(IDatabase):
 
     def __init__(self) -> None:
         self.fileTable=set()
-        self.clean_filetable_was_called=False
+        self.clean_filetable_was_called = False
         super().__init__()
 
     def open(self):

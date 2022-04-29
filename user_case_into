@@ -30,3 +30,9 @@ document-links [--help] | <command> [<args>]
 
     update-filetable  stores all files in path into filetable
      
+
+
+## steps to do.
+(1) clean database with new function(a) clen file table (b) clean ivalid links
+(2) copy startegy: separate link valid data
+(3) separate unzip function

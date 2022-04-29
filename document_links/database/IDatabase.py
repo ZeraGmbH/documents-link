@@ -202,3 +202,15 @@ class IDatabase(ABC):
         @throw RuntimeError if database is not open
         """
         pass
+
+    def clean_clean_text_file_database(self):
+        """!
+        remove all data from Filetable
+        """
+        pass
+
+    def clean_invalid_link_database(self):
+        """!
+        remove all data from Invalid link.
+        """
+        pass

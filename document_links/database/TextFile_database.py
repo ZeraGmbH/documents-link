@@ -171,7 +171,14 @@ class TextFileDatabase(IDatabase.IDatabase):
                 break
             i +=1
         return link
-        
+    
+    def clean_clean_text_file_database(self):
+        self.text_file_database.truncate(0)
+        return True
+
+    def clean_invalid_link_database(self):
+        self.invalid_link_database.truncate(0)
+        return True
 
 ### private functions.
     def __remove_line_breaks(self,entries):
