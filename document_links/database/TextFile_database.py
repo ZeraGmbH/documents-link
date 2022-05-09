@@ -20,8 +20,8 @@ class TextFileDatabase(IDatabase.IDatabase):
         self.text_file_database.close()
     
     def open(self):
-        self.text_file_database = open(self.databaseProp.text_file_database_name, "r+")
-        self.invalid_link_database = open(self.databaseProp.invalid_link_database_name, "r+")
+        self.text_file_database = open(self.databaseProp.text_file_database_name, "r+", encoding='utf-8', errors='ignore')
+        self.invalid_link_database = open(self.databaseProp.invalid_link_database_name, "r+", encoding='utf-8', errors='ignore')
         self.__reinit_file_access()
         return True
 

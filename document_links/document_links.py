@@ -111,3 +111,5 @@ class DocumentLinks():
         
 
 # python document-links.py update-filetable
+# python document-links.py update-filetable M:\Zusammenarbeit\Transferordner\EW\DKU\test_link_data
+# python document-links.py windows-check-links M:\Zusammenarbeit\Transferordner\EW\DKU\test_link_data\test_link_data1
