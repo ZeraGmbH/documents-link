@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="HDLCompiler" num="946" delta="unknown" >"C:/Anuja/FG_HW/Sequenzer.vhd" Line 73: Actual for formal port <arg fmt="%s" index="1">addrb_in</arg> is neither a static name nor a globally static expression
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="746" delta="unknown" >"C:/Anuja/FG_HW/Kanal_Kurve_Manager.vhd" Line 371: Range is empty (null range)
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="220" delta="unknown" >"C:/Anuja/FG_HW/Kanal_Kurve_Manager.vhd" Line 371: Assignment ignored
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="746" delta="unknown" >"N:/P.20131013/rtf/vhdl/src/unisims/primitive/RAMB16BWER.vhd" Line 2444: Range is empty (null range)
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="746" delta="unknown" >"N:/P.20131013/rtf/vhdl/src/unisims/primitive/RAMB16BWER.vhd" Line 2835: Range is empty (null range)
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="746" delta="unknown" >"N:/P.20131013/rtf/vhdl/src/unisims/primitive/RAMB16BWER.vhd" Line 2948: Range is empty (null range)
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="746" delta="unknown" >"N:/P.20131013/rtf/vhdl/src/unisims/primitive/RAMB16BWER.vhd" Line 2966: Range is empty (null range)
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="746" delta="unknown" >"N:/P.20131013/rtf/vhdl/src/unisims/primitive/RAMB16BWER.vhd" Line 2985: Range is empty (null range)
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="746" delta="unknown" >"N:/P.20131013/rtf/vhdl/src/unisims/primitive/RAMB16BWER.vhd" Line 3003: Range is empty (null range)
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="746" delta="unknown" >"N:/P.20131013/rtf/vhdl/src/unisims/primitive/RAMB16BWER.vhd" Line 3029: Range is empty (null range)
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="746" delta="unknown" >"N:/P.20131013/rtf/vhdl/src/unisims/primitive/RAMB16BWER.vhd" Line 3032: Range is empty (null range)
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="746" delta="unknown" >"N:/P.20131013/rtf/vhdl/src/unisims/primitive/RAMB16BWER.vhd" Line 2444: Range is empty (null range)
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="746" delta="unknown" >"N:/P.20131013/rtf/vhdl/src/unisims/primitive/RAMB16BWER.vhd" Line 2834: Range is empty (null range)
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="746" delta="unknown" >"N:/P.20131013/rtf/vhdl/src/unisims/primitive/RAMB16BWER.vhd" Line 2835: Range is empty (null range)
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="746" delta="unknown" >"N:/P.20131013/rtf/vhdl/src/unisims/primitive/RAMB16BWER.vhd" Line 2948: Range is empty (null range)
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="746" delta="unknown" >"N:/P.20131013/rtf/vhdl/src/unisims/primitive/RAMB16BWER.vhd" Line 2966: Range is empty (null range)
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="746" delta="unknown" >"N:/P.20131013/rtf/vhdl/src/unisims/primitive/RAMB16BWER.vhd" Line 2985: Range is empty (null range)
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="746" delta="unknown" >"N:/P.20131013/rtf/vhdl/src/unisims/primitive/RAMB16BWER.vhd" Line 3003: Range is empty (null range)
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="746" delta="unknown" >"N:/P.20131013/rtf/vhdl/src/unisims/primitive/RAMB16BWER.vhd" Line 3029: Range is empty (null range)
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="746" delta="unknown" >"N:/P.20131013/rtf/vhdl/src/unisims/primitive/RAMB16BWER.vhd" Line 3032: Range is empty (null range)
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="746" delta="unknown" >"C:/Anuja/FG_HW/Kanal_Kurve_Manager.vhd" Line 336: Range is empty (null range)
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="746" delta="unknown" >"C:/Anuja/FG_HW/Kanal_Kurve_Manager.vhd" Line 338: Range is empty (null range)
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="746" delta="unknown" >"C:/Anuja/FG_HW/Kanal_Kurve_Manager.vhd" Line 340: Range is empty (null range)
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="746" delta="unknown" >"C:/Anuja/FG_HW/Kanal_Kurve_Manager.vhd" Line 342: Range is empty (null range)
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="746" delta="unknown" >"C:/Anuja/FG_HW/Kanal_Kurve_Manager.vhd" Line 350: Range is empty (null range)
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="746" delta="unknown" >"C:/Anuja/FG_HW/Kanal_Kurve_Manager.vhd" Line 352: Range is empty (null range)
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="746" delta="unknown" >"C:/Anuja/FG_HW/Kanal_Kurve_Manager.vhd" Line 354: Range is empty (null range)
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="746" delta="unknown" >"C:/Anuja/FG_HW/Kanal_Kurve_Manager.vhd" Line 356: Range is empty (null range)
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="746" delta="unknown" >"C:/Anuja/FG_HW/Kanal_Kurve_Manager.vhd" Line 371: Range is empty (null range)
+</msg>
+
+</messages>
+

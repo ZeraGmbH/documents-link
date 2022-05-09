@@ -1,0 +1,1229 @@
+Release 14.7 - xst P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.14 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.14 secs
+ 
+--> Reading design: FG_HW.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "FG_HW.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "FG_HW"
+Output Format                      : NGC
+Target Device                      : xc6slx25-2-fgg484
+
+---- Source Options
+Top Module Name                    : FG_HW
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "C:\Anuja\FG_HW\SPIMaster.vhd" into library work
+Parsing entity <SPIMaster>.
+Parsing architecture <Behavioral> of entity <spimaster>.
+Parsing VHDL file "C:\Anuja\FG_HW\Sequenz_Bitstream.vhd" into library work
+Parsing entity <Sequenz_Bitstream>.
+Parsing architecture <Behavioral> of entity <sequenz_bitstream>.
+Parsing VHDL file "C:\Anuja\FG_HW\PZ_div.vhd" into library work
+Parsing entity <PZ_div>.
+Parsing architecture <PZ_div_arch> of entity <pz_div>.
+Parsing VHDL file "C:\Anuja\FG_HW\FG_Pack.vhd" into library work
+Parsing package <FG_Pack>.
+Parsing package body <FG_Pack>.
+Parsing VHDL file "C:\Anuja\FG_HW\BRAMHandler_CurveB_B11.vhd" into library work
+Parsing entity <BRAMHandler_CurveB_B11>.
+Parsing architecture <Behavioral> of entity <bramhandler_curveb_b11>.
+Parsing VHDL file "C:\Anuja\FG_HW\BRAMHandler_CurveB_B10.vhd" into library work
+Parsing entity <BRAMHandler_CurveB_B10>.
+Parsing architecture <Behavioral> of entity <bramhandler_curveb_b10>.
+Parsing VHDL file "C:\Anuja\FG_HW\BRAMHandler_CurveB_B01.vhd" into library work
+Parsing entity <BRAMHandler_CurveB_B01>.
+Parsing architecture <Behavioral> of entity <bramhandler_curveb_b01>.
+Parsing VHDL file "C:\Anuja\FG_HW\BRAMHandler_CurveB_B00.vhd" into library work
+Parsing entity <BRAMHandler_CurveB_B00>.
+Parsing architecture <Behavioral> of entity <bramhandler_curveb_b00>.
+Parsing VHDL file "C:\Anuja\FG_HW\BRAMHandler_CurveA_B11.vhd" into library work
+Parsing entity <BRAMHandler_CurveA_B11>.
+Parsing architecture <Behavioral> of entity <bramhandler_curvea_b11>.
+Parsing VHDL file "C:\Anuja\FG_HW\BRAMHandler_CurveA_B10.vhd" into library work
+Parsing entity <BRAMHandler_CurveA_B10>.
+Parsing architecture <Behavioral> of entity <bramhandler_curvea_b10>.
+Parsing VHDL file "C:\Anuja\FG_HW\BRAMHandler_CurveA_B01.vhd" into library work
+Parsing entity <BRAMHandler_CurveA_B01>.
+Parsing architecture <Behavioral> of entity <bramhandler_curvea_b01>.
+Parsing VHDL file "C:\Anuja\FG_HW\BRAMHandler_CurveA_B00.vhd" into library work
+Parsing entity <BRAMHandler_CurveA_B00>.
+Parsing architecture <Behavioral> of entity <bramhandler_curvea_b00>.
+Parsing VHDL file "C:\Anuja\FG_HW\Sequenzer.vhd" into library work
+Parsing entity <Sequenzer>.
+Parsing architecture <Behavioral> of entity <sequenzer>.
+WARNING:HDLCompiler:946 - "C:\Anuja\FG_HW\Sequenzer.vhd" Line 73: Actual for formal port addrb_in is neither a static name nor a globally static expression
+Parsing VHDL file "C:\Anuja\FG_HW\PZ_pll_COM5003.vhd" into library work
+Parsing entity <PZ_PLL>.
+Parsing architecture <PZ_PLL_arch> of entity <pz_pll>.
+Parsing VHDL file "C:\Anuja\FG_HW\Kanal_Kurve_Manager.vhd" into library work
+Parsing entity <Kanal_Kurve_Manager>.
+Parsing architecture <Behavioral> of entity <kanal_kurve_manager>.
+Parsing VHDL file "C:\Anuja\FG_HW\FG_HW.vhd" into library work
+Parsing entity <FG_HW>.
+Parsing architecture <Behavioral> of entity <fg_hw>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <FG_HW> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\FG_HW.vhd" Line 95: Using initial value "0000000000000000" for pll_parameter since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\FG_HW.vhd" Line 96: Using initial value "00000000000000000000000000000000" for pll_phi_step_in since it is never assigned
+
+Elaborating entity <PZ_PLL> (architecture <PZ_PLL_arch>) with generics from library <work>.
+
+Elaborating entity <PZ_div> (architecture <PZ_div_arch>) with generics from library <work>.
+WARNING:HDLCompiler:1127 - "C:\Anuja\FG_HW\PZ_pll_COM5003.vhd" Line 424: Assignment to timeout_phase_count ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Anuja\FG_HW\PZ_pll_COM5003.vhd" Line 475: Assignment to pll_neu_gefangen ignored, since the identifier is never used
+WARNING:HDLCompiler:634 - "C:\Anuja\FG_HW\PZ_pll_COM5003.vhd" Line 143: Net <start_state_0> does not have a driver.
+
+Elaborating entity <Sequenzer> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <Sequenz_Bitstream> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\Sequenz_Bitstream.vhd" Line 49: Using initial value '0' for regcea since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\Sequenz_Bitstream.vhd" Line 50: Using initial value '0' for rsta since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\Sequenz_Bitstream.vhd" Line 51: Using initial value "0000" for wea since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\Sequenz_Bitstream.vhd" Line 52: Using initial value "00000000000000000000000000000000" for dia since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\Sequenz_Bitstream.vhd" Line 53: Using initial value "0000" for dipa since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\Sequenz_Bitstream.vhd" Line 60: Using initial value '0' for regceb since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\Sequenz_Bitstream.vhd" Line 61: Using initial value '0' for rstb since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\Sequenz_Bitstream.vhd" Line 62: Using initial value "1111" for web since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\Sequenz_Bitstream.vhd" Line 64: Using initial value "0000" for dipb since it is never assigned
+INFO:HDLCompiler:679 - "C:\Anuja\FG_HW\Sequenzer.vhd" Line 132. Case statement is complete. others clause is never selected
+
+Elaborating entity <Kanal_Kurve_Manager> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <SPIMaster> (architecture <Behavioral>) with generics from library <work>.
+INFO:HDLCompiler:679 - "C:\Anuja\FG_HW\SPIMaster.vhd" Line 87. Case statement is complete. others clause is never selected
+
+Elaborating entity <BRAMHandler_CurveA_B00> (architecture <Behavioral>) with generics from library <work>.
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveA_B00.vhd" Line 47: Using initial value '0' for regcea since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveA_B00.vhd" Line 48: Using initial value '0' for rsta since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveA_B00.vhd" Line 49: Using initial value "0000" for wea since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveA_B00.vhd" Line 50: Using initial value "00000000000000000000000000000000" for dia since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveA_B00.vhd" Line 51: Using initial value "0000" for dipa since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveA_B00.vhd" Line 55: Using initial value '0' for regceb since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveA_B00.vhd" Line 56: Using initial value '0' for rstb since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveA_B00.vhd" Line 57: Using initial value "1111" for web since it is never assigned
+
+Elaborating entity <BRAMHandler_CurveA_B01> (architecture <Behavioral>) with generics from library <work>.
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveA_B01.vhd" Line 47: Using initial value '0' for regcea since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveA_B01.vhd" Line 48: Using initial value '0' for rsta since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveA_B01.vhd" Line 49: Using initial value "0000" for wea since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveA_B01.vhd" Line 50: Using initial value "00000000000000000000000000000000" for dia since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveA_B01.vhd" Line 51: Using initial value "0000" for dipa since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveA_B01.vhd" Line 55: Using initial value '0' for regceb since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveA_B01.vhd" Line 56: Using initial value '0' for rstb since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveA_B01.vhd" Line 57: Using initial value "1111" for web since it is never assigned
+
+Elaborating entity <BRAMHandler_CurveA_B10> (architecture <Behavioral>) with generics from library <work>.
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveA_B10.vhd" Line 47: Using initial value '0' for regcea since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveA_B10.vhd" Line 48: Using initial value '0' for rsta since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveA_B10.vhd" Line 49: Using initial value "0000" for wea since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveA_B10.vhd" Line 50: Using initial value "00000000000000000000000000000000" for dia since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveA_B10.vhd" Line 51: Using initial value "0000" for dipa since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveA_B10.vhd" Line 55: Using initial value '0' for regceb since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveA_B10.vhd" Line 56: Using initial value '0' for rstb since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveA_B10.vhd" Line 57: Using initial value "1111" for web since it is never assigned
+
+Elaborating entity <BRAMHandler_CurveA_B11> (architecture <Behavioral>) with generics from library <work>.
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveA_B11.vhd" Line 47: Using initial value '0' for regcea since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveA_B11.vhd" Line 48: Using initial value '0' for rsta since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveA_B11.vhd" Line 49: Using initial value "0000" for wea since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveA_B11.vhd" Line 50: Using initial value "00000000000000000000000000000000" for dia since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveA_B11.vhd" Line 51: Using initial value "0000" for dipa since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveA_B11.vhd" Line 55: Using initial value '0' for regceb since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveA_B11.vhd" Line 56: Using initial value '0' for rstb since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveA_B11.vhd" Line 57: Using initial value "1111" for web since it is never assigned
+
+Elaborating entity <BRAMHandler_CurveB_B00> (architecture <Behavioral>) with generics from library <work>.
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveB_B00.vhd" Line 47: Using initial value '0' for regcea since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveB_B00.vhd" Line 48: Using initial value '0' for rsta since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveB_B00.vhd" Line 49: Using initial value "0000" for wea since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveB_B00.vhd" Line 50: Using initial value "00000000000000000000000000000000" for dia since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveB_B00.vhd" Line 51: Using initial value "0000" for dipa since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveB_B00.vhd" Line 55: Using initial value '0' for regceb since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveB_B00.vhd" Line 56: Using initial value '0' for rstb since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveB_B00.vhd" Line 57: Using initial value "1111" for web since it is never assigned
+
+Elaborating entity <BRAMHandler_CurveB_B01> (architecture <Behavioral>) with generics from library <work>.
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveB_B01.vhd" Line 47: Using initial value '0' for regcea since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveB_B01.vhd" Line 48: Using initial value '0' for rsta since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveB_B01.vhd" Line 49: Using initial value "0000" for wea since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveB_B01.vhd" Line 50: Using initial value "00000000000000000000000000000000" for dia since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveB_B01.vhd" Line 51: Using initial value "0000" for dipa since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveB_B01.vhd" Line 55: Using initial value '0' for regceb since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveB_B01.vhd" Line 56: Using initial value '0' for rstb since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveB_B01.vhd" Line 57: Using initial value "1111" for web since it is never assigned
+
+Elaborating entity <BRAMHandler_CurveB_B10> (architecture <Behavioral>) with generics from library <work>.
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveB_B10.vhd" Line 47: Using initial value '0' for regcea since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveB_B10.vhd" Line 48: Using initial value '0' for rsta since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveB_B10.vhd" Line 49: Using initial value "0000" for wea since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveB_B10.vhd" Line 50: Using initial value "00000000000000000000000000000000" for dia since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveB_B10.vhd" Line 51: Using initial value "0000" for dipa since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveB_B10.vhd" Line 55: Using initial value '0' for regceb since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveB_B10.vhd" Line 56: Using initial value '0' for rstb since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveB_B10.vhd" Line 57: Using initial value "1111" for web since it is never assigned
+
+Elaborating entity <BRAMHandler_CurveB_B11> (architecture <Behavioral>) with generics from library <work>.
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveB_B11.vhd" Line 47: Using initial value '0' for regcea since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveB_B11.vhd" Line 48: Using initial value '0' for rsta since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveB_B11.vhd" Line 49: Using initial value "0000" for wea since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveB_B11.vhd" Line 50: Using initial value "00000000000000000000000000000000" for dia since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveB_B11.vhd" Line 51: Using initial value "0000" for dipa since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveB_B11.vhd" Line 55: Using initial value '0' for regceb since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveB_B11.vhd" Line 56: Using initial value '0' for rstb since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Anuja\FG_HW\BRAMHandler_CurveB_B11.vhd" Line 57: Using initial value "1111" for web since it is never assigned
+WARNING:HDLCompiler:746 - "C:\Anuja\FG_HW\Kanal_Kurve_Manager.vhd" Line 340: Range is empty (null range)
+WARNING:HDLCompiler:746 - "C:\Anuja\FG_HW\Kanal_Kurve_Manager.vhd" Line 338: Range is empty (null range)
+WARNING:HDLCompiler:746 - "C:\Anuja\FG_HW\Kanal_Kurve_Manager.vhd" Line 336: Range is empty (null range)
+WARNING:HDLCompiler:746 - "C:\Anuja\FG_HW\Kanal_Kurve_Manager.vhd" Line 334: Range is empty (null range)
+WARNING:HDLCompiler:746 - "C:\Anuja\FG_HW\Kanal_Kurve_Manager.vhd" Line 354: Range is empty (null range)
+WARNING:HDLCompiler:746 - "C:\Anuja\FG_HW\Kanal_Kurve_Manager.vhd" Line 352: Range is empty (null range)
+WARNING:HDLCompiler:746 - "C:\Anuja\FG_HW\Kanal_Kurve_Manager.vhd" Line 350: Range is empty (null range)
+WARNING:HDLCompiler:746 - "C:\Anuja\FG_HW\Kanal_Kurve_Manager.vhd" Line 348: Range is empty (null range)
+WARNING:HDLCompiler:746 - "C:\Anuja\FG_HW\Kanal_Kurve_Manager.vhd" Line 369: Range is empty (null range)
+WARNING:HDLCompiler:220 - "C:\Anuja\FG_HW\Kanal_Kurve_Manager.vhd" Line 369: Assignment ignored
+WARNING:HDLCompiler:634 - "C:\Anuja\FG_HW\Kanal_Kurve_Manager.vhd" Line 205: Net <BRAM_WriteData[31]> does not have a driver.
+WARNING:HDLCompiler:634 - "C:\Anuja\FG_HW\Kanal_Kurve_Manager.vhd" Line 206: Net <BRAM_WriteParity[3]> does not have a driver.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <FG_HW>.
+    Related source file is "C:\Anuja\FG_HW\FG_HW.vhd".
+WARNING:Xst:647 - Input <rd> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+INFO:Xst:3210 - "C:\Anuja\FG_HW\FG_HW.vhd" line 128: Output port <testpin> of the instance <PLL_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Anuja\FG_HW\FG_HW.vhd" line 128: Output port <pll_clk> of the instance <PLL_1> is unconnected or connected to loadless signal.
+    Found 1-bit register for signal <PLL_1ms>.
+    Found 4-bit register for signal <counter_SCLK>.
+    Found 1-bit register for signal <SPI_SCLK>.
+    Found 1-bit register for signal <SequenceBRAMWriteEna>.
+    Found 6-bit register for signal <KanalWriteEnable>.
+    Found 16-bit register for signal <SequenzSteuerRegister>.
+    Found 14-bit register for signal <ModuloRegister>.
+    Found 16-bit register for signal <KanalMaske>.
+    Found 12-bit register for signal <NullDurchagänge<5><0>>.
+    Found 12-bit register for signal <NullDurchagänge<5><1>>.
+    Found 12-bit register for signal <NullDurchagänge<5><2>>.
+    Found 12-bit register for signal <NullDurchagänge<4><0>>.
+    Found 12-bit register for signal <NullDurchagänge<4><1>>.
+    Found 12-bit register for signal <NullDurchagänge<4><2>>.
+    Found 12-bit register for signal <NullDurchagänge<3><0>>.
+    Found 12-bit register for signal <NullDurchagänge<3><1>>.
+    Found 12-bit register for signal <NullDurchagänge<3><2>>.
+    Found 12-bit register for signal <NullDurchagänge<2><0>>.
+    Found 12-bit register for signal <NullDurchagänge<2><1>>.
+    Found 12-bit register for signal <NullDurchagänge<2><2>>.
+    Found 12-bit register for signal <NullDurchagänge<1><0>>.
+    Found 12-bit register for signal <NullDurchagänge<1><1>>.
+    Found 12-bit register for signal <NullDurchagänge<1><2>>.
+    Found 12-bit register for signal <NullDurchagänge<0><0>>.
+    Found 12-bit register for signal <NullDurchagänge<0><1>>.
+    Found 12-bit register for signal <NullDurchagänge<0><2>>.
+    Found 17-bit register for signal <Pulse_1ms.pulse_Counter>.
+    Found 17-bit adder for signal <Pulse_1ms.pulse_Counter[16]_GND_6_o_add_0_OUT> created at line 118.
+    Found 4-bit adder for signal <counter_SCLK[3]_GND_6_o_add_4_OUT> created at line 149.
+    Found 8x6-bit Read Only RAM for signal <WriteAddr_IN[15]_GND_6_o_wide_mux_8_OUT>
+    Found 4-bit comparator greater for signal <n0006> created at line 150
+    Summary:
+	inferred   1 RAM(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred 292 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+Unit <FG_HW> synthesized.
+
+Synthesizing Unit <PZ_PLL>.
+    Related source file is "C:\Anuja\FG_HW\PZ_pll_COM5003.vhd".
+        PhaseBitCount = 12
+WARNING:Xst:647 - Input <parameter> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <phi_step_in> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+INFO:Xst:3210 - "C:\Anuja\FG_HW\PZ_pll_COM5003.vhd" line 350: Output port <testp> of the instance <u_div> is unconnected or connected to loadless signal.
+WARNING:Xst:653 - Signal <testpin<31:16>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <start_state_0> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Found 1-bit register for signal <en_T_clk>.
+    Found 4-bit register for signal <eingangsfiltercount>.
+    Found 1-bit register for signal <takt_in_i0>.
+    Found 1-bit register for signal <startfiltercount>.
+    Found 1-bit register for signal <takt_in_i>.
+    Found 1-bit register for signal <takt_in_i2>.
+    Found 1-bit register for signal <start_state_1>.
+    Found 8-bit register for signal <TimeOutCounter>.
+    Found 1-bit register for signal <TimeOut>.
+    Found 36-bit register for signal <T_SOLL>.
+    Found 36-bit register for signal <T_counter>.
+    Found 1-bit register for signal <start_state_2>.
+    Found 1-bit register for signal <run_div_i>.
+    Found 36-bit register for signal <Gesamt_Counter>.
+    Found 1-bit register for signal <takt_ist>.
+    Found 1-bit register for signal <takt_ist_i>.
+    Found 1-bit register for signal <Phase_pos>.
+    Found 1-bit register for signal <Phase_count_run>.
+    Found 18-bit register for signal <Phase_count>.
+    Found 1-bit register for signal <tmp_stat4>.
+    Found 1-bit register for signal <tmp_stat4_i>.
+    Found 1-bit register for signal <pll_gefangen>.
+    Found 36-bit register for signal <Phi_steps_i>.
+    Found 1-bit register for signal <dreh_pos>.
+    Found 1-bit register for signal <pll_gefangen_i>.
+    Found 36-bit register for signal <Phi_steps>.
+    Found 5-bit register for signal <T_clk_count>.
+    Found 5-bit adder for signal <T_clk_count[4]_GND_10_o_add_0_OUT> created at line 226.
+    Found 4-bit adder for signal <eingangsfiltercount[3]_GND_10_o_add_3_OUT> created at line 268.
+    Found 8-bit adder for signal <TimeOutCounter[7]_GND_10_o_add_9_OUT> created at line 306.
+    Found 36-bit adder for signal <T_counter[35]_GND_10_o_add_14_OUT> created at line 333.
+    Found 36-bit adder for signal <Gesamt_Counter[35]_Phi_steps[35]_add_21_OUT> created at line 393.
+    Found 18-bit adder for signal <Phase_count[17]_GND_10_o_add_28_OUT> created at line 440.
+    Found 36-bit adder for signal <Phi_steps_soll[35]_GND_10_o_add_33_OUT> created at line 488.
+    Found 36-bit adder for signal <Phi_steps_soll[35]_GND_10_o_add_36_OUT> created at line 502.
+    Found 36-bit subtractor for signal <GND_10_o_GND_10_o_sub_33_OUT<35:0>> created at line 486.
+    Found 36-bit subtractor for signal <GND_10_o_GND_10_o_sub_38_OUT<35:0>> created at line 504.
+    Found 8-bit comparator lessequal for signal <TimeOutCounter[7]_PWR_10_o_LessThan_9_o> created at line 304
+    Found 16-bit comparator greater for signal <Gesamt_Counter[35]_GND_10_o_LessThan_24_o> created at line 398
+    Found 18-bit comparator greater for signal <Phase_count[17]_GND_10_o_LessThan_32_o> created at line 479
+    Found 36-bit comparator greater for signal <Phi_steps_i[35]_GND_10_o_LessThan_45_o> created at line 513
+    Found 36-bit comparator greater for signal <GND_10_o_Phi_steps_i[35]_LessThan_46_o> created at line 516
+    Summary:
+	inferred   7 Adder/Subtractor(s).
+	inferred 233 D-type flip-flop(s).
+	inferred   5 Comparator(s).
+	inferred   8 Multiplexer(s).
+Unit <PZ_PLL> synthesized.
+
+Synthesizing Unit <PZ_div>.
+    Related source file is "C:\Anuja\FG_HW\PZ_div.vhd".
+        Divident = 268435456
+WARNING:Xst:647 - Input <reset> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:653 - Signal <testp> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Found 36-bit register for signal <step>.
+    Found 36-bit register for signal <count>.
+    Found 36-bit register for signal <countb>.
+    Found 36-bit register for signal <ergebnis_i>.
+    Found 1-bit register for signal <run_i>.
+    Found 36-bit adder for signal <count[35]_step[35]_add_1_OUT> created at line 76.
+    Found 36-bit adder for signal <countb[35]_GND_11_o_add_2_OUT> created at line 77.
+    Found 36-bit comparator greater for signal <GND_11_o_count[35]_LessThan_6_o> created at line 79
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred 145 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+Unit <PZ_div> synthesized.
+
+Synthesizing Unit <Sequenzer>.
+    Related source file is "C:\Anuja\FG_HW\Sequenzer.vhd".
+WARNING:Xst:647 - Input <SequenzBRAMAddr_IN<19:9>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <SteuerRegister_IN<1:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <SteuerRegister_IN<4:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <SteuerRegister_IN<15:6>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <KanalMaske_IN<15:6>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 14-bit register for signal <Sequenz_Bit_Address>.
+    Found 1-bit register for signal <Sequenz_Running>.
+    Found 2-bit register for signal <Sequencing_State>.
+    Found 2-bit register for signal <Kurvenauswahl<5>>.
+    Found 2-bit register for signal <Kurvenauswahl<4>>.
+    Found 2-bit register for signal <Kurvenauswahl<3>>.
+    Found 2-bit register for signal <Kurvenauswahl<2>>.
+    Found 2-bit register for signal <Kurvenauswahl<1>>.
+    Found 2-bit register for signal <Kurvenauswahl<0>>.
+    Found 12-bit register for signal <Phase_old>.
+    Found finite state machine <FSM_0> for signal <Sequencing_State>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 15                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 2                                              |
+    | Clock              | Clock_100MHz_IN (rising_edge)                  |
+    | Power Up State     | disabled                                       |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 14-bit adder for signal <Sequenz_Bit_Address[13]_GND_61_o_add_8_OUT> created at line 1241.
+    Found 12-bit 3-to-1 multiplexer for signal <Kurvenauswahl[0][1]_X_12_o_wide_mux_1_OUT> created at line 89.
+    Found 14-bit 3-to-1 multiplexer for signal <Sequencing_State[1]_X_12_o_wide_mux_17_OUT> created at line 92.
+    Found 1-bit 3-to-1 multiplexer for signal <Sequencing_State[1]_X_12_o_Mux_18_o> created at line 92.
+    Found 12-bit 3-to-1 multiplexer for signal <Kurvenauswahl[1][1]_X_12_o_wide_mux_32_OUT> created at line 141.
+    Found 12-bit 3-to-1 multiplexer for signal <Kurvenauswahl[2][1]_X_12_o_wide_mux_39_OUT> created at line 141.
+    Found 12-bit 3-to-1 multiplexer for signal <Kurvenauswahl[3][1]_X_12_o_wide_mux_46_OUT> created at line 141.
+    Found 12-bit 3-to-1 multiplexer for signal <Kurvenauswahl[4][1]_X_12_o_wide_mux_53_OUT> created at line 141.
+    Found 12-bit 3-to-1 multiplexer for signal <Kurvenauswahl[5][1]_X_12_o_wide_mux_60_OUT> created at line 141.
+    Found 12-bit comparator equal for signal <n0000> created at line 86
+    Found 12-bit comparator equal for signal <Kurvenauswahl[0][1]_PLL_Phase_IN[11]_equal_3_o> created at line 89
+    Found 14-bit comparator equal for signal <ModuloRegister_IN[13]_Sequenz_Bit_Address[13]_equal_6_o> created at line 107
+    Found 12-bit comparator equal for signal <Kurvenauswahl[0][1]_Phase_old[11]_equal_27_o> created at line 141
+    Found 12-bit comparator equal for signal <Kurvenauswahl[1][1]_Phase_old[11]_equal_34_o> created at line 141
+    Found 12-bit comparator equal for signal <Kurvenauswahl[2][1]_Phase_old[11]_equal_41_o> created at line 141
+    Found 12-bit comparator equal for signal <Kurvenauswahl[3][1]_Phase_old[11]_equal_48_o> created at line 141
+    Found 12-bit comparator equal for signal <Kurvenauswahl[4][1]_Phase_old[11]_equal_55_o> created at line 141
+    Found 12-bit comparator equal for signal <Kurvenauswahl[5][1]_Phase_old[11]_equal_62_o> created at line 141
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  39 D-type flip-flop(s).
+	inferred   9 Comparator(s).
+	inferred  29 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <Sequenzer> synthesized.
+
+Synthesizing Unit <Sequenz_Bitstream>.
+    Related source file is "C:\Anuja\FG_HW\Sequenz_Bitstream.vhd".
+    Summary:
+	no macro.
+Unit <Sequenz_Bitstream> synthesized.
+
+Synthesizing Unit <Kanal_Kurve_Manager>.
+    Related source file is "C:\Anuja\FG_HW\Kanal_Kurve_Manager.vhd".
+WARNING:Xst:647 - Input <BRAMWriteData_IN<31:16>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <BRAMWriteAddr_IN<19:13>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+INFO:Xst:3210 - "C:\Anuja\FG_HW\Kanal_Kurve_Manager.vhd" line 222: Output port <DOPA_OUT> of the instance <BRAM_CurveA_B00> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Anuja\FG_HW\Kanal_Kurve_Manager.vhd" line 235: Output port <DOPA_OUT> of the instance <BRAM_CurveA_B01> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Anuja\FG_HW\Kanal_Kurve_Manager.vhd" line 248: Output port <DOPA_OUT> of the instance <BRAM_CurveA_B10> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Anuja\FG_HW\Kanal_Kurve_Manager.vhd" line 261: Output port <DOPA_OUT> of the instance <BRAM_CurveA_B11> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Anuja\FG_HW\Kanal_Kurve_Manager.vhd" line 274: Output port <DOPA_OUT> of the instance <BRAM_CurveB_B00> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Anuja\FG_HW\Kanal_Kurve_Manager.vhd" line 287: Output port <DOPA_OUT> of the instance <BRAM_CurveB_B01> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Anuja\FG_HW\Kanal_Kurve_Manager.vhd" line 300: Output port <DOPA_OUT> of the instance <BRAM_CurveB_B10> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Anuja\FG_HW\Kanal_Kurve_Manager.vhd" line 313: Output port <DOPA_OUT> of the instance <BRAM_CurveB_B11> is unconnected or connected to loadless signal.
+WARNING:Xst:2935 - Signal 'BRAM_WriteData<31:16>', unconnected in block 'Kanal_Kurve_Manager', is tied to its initial value (0000000000000000).
+WARNING:Xst:2935 - Signal 'BRAM_WriteParity', unconnected in block 'Kanal_Kurve_Manager', is tied to its initial value (0000).
+    Found 16-bit 4-to-1 multiplexer for signal <CurveA_Data> created at line 208.
+    Found 16-bit 4-to-1 multiplexer for signal <CurveB_Data> created at line 209.
+    Found 16-bit 4-to-1 multiplexer for signal <SPI_Data> created at line 168.
+    Summary:
+	inferred   3 Multiplexer(s).
+Unit <Kanal_Kurve_Manager> synthesized.
+
+Synthesizing Unit <SPIMaster>.
+    Related source file is "C:\Anuja\FG_HW\SPIMaster.vhd".
+        DataWidth = 16
+    Found 5-bit register for signal <bit_to_Transfer>.
+    Found 2-bit register for signal <SPI_Master_State>.
+    Found 1-bit register for signal <SPI_MOSI_OUT>.
+    Found 1-bit register for signal <SPI_LE_OUT>.
+    Found 16-bit register for signal <MOSI_Buffer>.
+INFO:Xst:1799 - State delay_for_le_h2l is never reached in FSM <SPI_Master_State>.
+    Found finite state machine <FSM_1> for signal <SPI_Master_State>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 4                                              |
+    | Inputs             | 1                                              |
+    | Outputs            | 2                                              |
+    | Clock              | SCLK_IN (falling_edge)                         |
+    | Power Up State     | idle                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 5-bit subtractor for signal <GND_117_o_GND_117_o_sub_5_OUT<4:0>> created at line 69.
+    Found 1-bit 16-to-1 multiplexer for signal <GND_117_o_MOSI_Buffer[15]_Mux_5_o> created at line 70.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  23 D-type flip-flop(s).
+	inferred   6 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <SPIMaster> synthesized.
+
+Synthesizing Unit <BRAMHandler_CurveA_B00>.
+    Related source file is "C:\Anuja\FG_HW\BRAMHandler_CurveA_B00.vhd".
+        DataWidth = 18
+    Summary:
+	no macro.
+Unit <BRAMHandler_CurveA_B00> synthesized.
+
+Synthesizing Unit <BRAMHandler_CurveA_B01>.
+    Related source file is "C:\Anuja\FG_HW\BRAMHandler_CurveA_B01.vhd".
+        DataWidth = 18
+    Summary:
+	no macro.
+Unit <BRAMHandler_CurveA_B01> synthesized.
+
+Synthesizing Unit <BRAMHandler_CurveA_B10>.
+    Related source file is "C:\Anuja\FG_HW\BRAMHandler_CurveA_B10.vhd".
+        DataWidth = 18
+    Summary:
+	no macro.
+Unit <BRAMHandler_CurveA_B10> synthesized.
+
+Synthesizing Unit <BRAMHandler_CurveA_B11>.
+    Related source file is "C:\Anuja\FG_HW\BRAMHandler_CurveA_B11.vhd".
+        DataWidth = 18
+    Summary:
+	no macro.
+Unit <BRAMHandler_CurveA_B11> synthesized.
+
+Synthesizing Unit <BRAMHandler_CurveB_B00>.
+    Related source file is "C:\Anuja\FG_HW\BRAMHandler_CurveB_B00.vhd".
+        DataWidth = 18
+    Summary:
+	no macro.
+Unit <BRAMHandler_CurveB_B00> synthesized.
+
+Synthesizing Unit <BRAMHandler_CurveB_B01>.
+    Related source file is "C:\Anuja\FG_HW\BRAMHandler_CurveB_B01.vhd".
+        DataWidth = 18
+    Summary:
+	no macro.
+Unit <BRAMHandler_CurveB_B01> synthesized.
+
+Synthesizing Unit <BRAMHandler_CurveB_B10>.
+    Related source file is "C:\Anuja\FG_HW\BRAMHandler_CurveB_B10.vhd".
+        DataWidth = 18
+    Summary:
+	no macro.
+Unit <BRAMHandler_CurveB_B10> synthesized.
+
+Synthesizing Unit <BRAMHandler_CurveB_B11>.
+    Related source file is "C:\Anuja\FG_HW\BRAMHandler_CurveB_B11.vhd".
+        DataWidth = 18
+    Summary:
+	no macro.
+Unit <BRAMHandler_CurveB_B11> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 8x6-bit single-port Read Only RAM                     : 1
+# Adders/Subtractors                                   : 18
+ 14-bit adder                                          : 1
+ 17-bit adder                                          : 1
+ 18-bit adder                                          : 1
+ 36-bit adder                                          : 4
+ 36-bit addsub                                         : 1
+ 4-bit adder                                           : 2
+ 5-bit adder                                           : 1
+ 5-bit subtractor                                      : 6
+ 8-bit adder                                           : 1
+# Registers                                            : 92
+ 1-bit register                                        : 35
+ 12-bit register                                       : 19
+ 14-bit register                                       : 2
+ 16-bit register                                       : 8
+ 17-bit register                                       : 1
+ 18-bit register                                       : 1
+ 2-bit register                                        : 6
+ 36-bit register                                       : 9
+ 4-bit register                                        : 2
+ 5-bit register                                        : 7
+ 6-bit register                                        : 1
+ 8-bit register                                        : 1
+# Comparators                                          : 16
+ 12-bit comparator equal                               : 8
+ 14-bit comparator equal                               : 1
+ 16-bit comparator greater                             : 1
+ 18-bit comparator greater                             : 1
+ 36-bit comparator greater                             : 3
+ 4-bit comparator greater                              : 1
+ 8-bit comparator lessequal                            : 1
+# Multiplexers                                         : 91
+ 1-bit 16-to-1 multiplexer                             : 6
+ 1-bit 2-to-1 multiplexer                              : 34
+ 1-bit 3-to-1 multiplexer                              : 1
+ 12-bit 2-to-1 multiplexer                             : 1
+ 12-bit 3-to-1 multiplexer                             : 6
+ 14-bit 2-to-1 multiplexer                             : 5
+ 14-bit 3-to-1 multiplexer                             : 1
+ 16-bit 4-to-1 multiplexer                             : 18
+ 18-bit 2-to-1 multiplexer                             : 1
+ 2-bit 2-to-1 multiplexer                              : 7
+ 36-bit 2-to-1 multiplexer                             : 5
+ 5-bit 2-to-1 multiplexer                              : 6
+# FSMs                                                 : 7
+
+=========================================================================
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:2677 - Node <SequenzSteuerRegister_1> of sequential type is unconnected in block <FG_HW>.
+WARNING:Xst:2677 - Node <SequenzSteuerRegister_4> of sequential type is unconnected in block <FG_HW>.
+WARNING:Xst:2677 - Node <SequenzSteuerRegister_6> of sequential type is unconnected in block <FG_HW>.
+WARNING:Xst:2677 - Node <SequenzSteuerRegister_7> of sequential type is unconnected in block <FG_HW>.
+WARNING:Xst:2677 - Node <SequenzSteuerRegister_8> of sequential type is unconnected in block <FG_HW>.
+WARNING:Xst:2677 - Node <SequenzSteuerRegister_9> of sequential type is unconnected in block <FG_HW>.
+WARNING:Xst:2677 - Node <SequenzSteuerRegister_10> of sequential type is unconnected in block <FG_HW>.
+WARNING:Xst:2677 - Node <SequenzSteuerRegister_11> of sequential type is unconnected in block <FG_HW>.
+WARNING:Xst:2677 - Node <SequenzSteuerRegister_12> of sequential type is unconnected in block <FG_HW>.
+WARNING:Xst:2677 - Node <SequenzSteuerRegister_13> of sequential type is unconnected in block <FG_HW>.
+WARNING:Xst:2677 - Node <SequenzSteuerRegister_14> of sequential type is unconnected in block <FG_HW>.
+WARNING:Xst:2677 - Node <SequenzSteuerRegister_15> of sequential type is unconnected in block <FG_HW>.
+WARNING:Xst:2677 - Node <KanalMaske_6> of sequential type is unconnected in block <FG_HW>.
+WARNING:Xst:2677 - Node <KanalMaske_7> of sequential type is unconnected in block <FG_HW>.
+WARNING:Xst:2677 - Node <KanalMaske_8> of sequential type is unconnected in block <FG_HW>.
+WARNING:Xst:2677 - Node <KanalMaske_9> of sequential type is unconnected in block <FG_HW>.
+WARNING:Xst:2677 - Node <KanalMaske_10> of sequential type is unconnected in block <FG_HW>.
+WARNING:Xst:2677 - Node <KanalMaske_11> of sequential type is unconnected in block <FG_HW>.
+WARNING:Xst:2677 - Node <KanalMaske_12> of sequential type is unconnected in block <FG_HW>.
+WARNING:Xst:2677 - Node <KanalMaske_13> of sequential type is unconnected in block <FG_HW>.
+WARNING:Xst:2677 - Node <KanalMaske_14> of sequential type is unconnected in block <FG_HW>.
+WARNING:Xst:2677 - Node <KanalMaske_15> of sequential type is unconnected in block <FG_HW>.
+
+Synthesizing (advanced) Unit <FG_HW>.
+The following registers are absorbed into counter <counter_SCLK>: 1 register on signal <counter_SCLK>.
+The following registers are absorbed into counter <Pulse_1ms.pulse_Counter>: 1 register on signal <Pulse_1ms.pulse_Counter>.
+INFO:Xst:3231 - The small RAM <Mram_WriteAddr_IN[15]_GND_6_o_wide_mux_8_OUT> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 8-word x 6-bit                      |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <WriteAddr_IN<15:13>> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <FG_HW> synthesized (advanced).
+
+Synthesizing (advanced) Unit <PZ_PLL>.
+The following registers are absorbed into accumulator <Gesamt_Counter>: 1 register on signal <Gesamt_Counter>.
+The following registers are absorbed into counter <T_clk_count>: 1 register on signal <T_clk_count>.
+The following registers are absorbed into counter <Phase_count>: 1 register on signal <Phase_count>.
+The following registers are absorbed into counter <TimeOutCounter>: 1 register on signal <TimeOutCounter>.
+The following registers are absorbed into counter <eingangsfiltercount>: 1 register on signal <eingangsfiltercount>.
+The following registers are absorbed into counter <T_counter>: 1 register on signal <T_counter>.
+Unit <PZ_PLL> synthesized (advanced).
+
+Synthesizing (advanced) Unit <PZ_div>.
+The following registers are absorbed into accumulator <count>: 1 register on signal <count>.
+The following registers are absorbed into counter <countb>: 1 register on signal <countb>.
+Unit <PZ_div> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 8x6-bit single-port distributed Read Only RAM         : 1
+# Adders/Subtractors                                   : 10
+ 14-bit adder                                          : 1
+ 17-bit adder                                          : 1
+ 36-bit addsub                                         : 1
+ 4-bit adder                                           : 1
+ 5-bit subtractor                                      : 6
+# Counters                                             : 8
+ 17-bit up counter                                     : 1
+ 18-bit up counter                                     : 1
+ 36-bit up counter                                     : 2
+ 4-bit up counter                                      : 2
+ 5-bit up counter                                      : 1
+ 8-bit up counter                                      : 1
+# Accumulators                                         : 2
+ 36-bit up accumulator                                 : 1
+ 36-bit up loadable accumulator                        : 1
+# Registers                                            : 647
+ Flip-Flops                                            : 647
+# Comparators                                          : 16
+ 12-bit comparator equal                               : 8
+ 14-bit comparator equal                               : 1
+ 16-bit comparator greater                             : 1
+ 18-bit comparator greater                             : 1
+ 36-bit comparator greater                             : 3
+ 4-bit comparator greater                              : 1
+ 8-bit comparator lessequal                            : 1
+# Multiplexers                                         : 100
+ 1-bit 16-to-1 multiplexer                             : 6
+ 1-bit 2-to-1 multiplexer                              : 46
+ 1-bit 3-to-1 multiplexer                              : 1
+ 12-bit 3-to-1 multiplexer                             : 6
+ 14-bit 2-to-1 multiplexer                             : 5
+ 14-bit 3-to-1 multiplexer                             : 1
+ 16-bit 4-to-1 multiplexer                             : 18
+ 2-bit 2-to-1 multiplexer                              : 7
+ 36-bit 2-to-1 multiplexer                             : 4
+ 5-bit 2-to-1 multiplexer                              : 6
+# FSMs                                                 : 7
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<2>_0_4> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<2>_1_4> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<2>_0_11> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<2>_1_11> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<2>_0_5> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<2>_1_5> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<2>_0_6> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<2>_1_6> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<2>_0_7> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<2>_1_7> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<5>_0_0> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<5>_1_0> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<2>_0_8> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<2>_1_8> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<5>_0_1> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<5>_1_1> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<2>_0_9> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<2>_1_9> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<5>_0_2> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<5>_1_2> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<5>_0_3> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<5>_1_3> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<3>_0_0> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<3>_1_0> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<5>_0_4> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<5>_1_4> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<3>_0_1> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<3>_1_1> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<4>_1_10> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<4>_0_10> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<5>_0_5> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<5>_1_5> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<3>_0_2> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<3>_1_2> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<4>_1_11> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<4>_0_11> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<5>_0_6> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<5>_1_6> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<3>_0_3> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<3>_1_3> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<5>_0_7> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<5>_1_7> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<3>_0_4> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<3>_1_4> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<5>_0_8> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<5>_1_8> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<3>_0_5> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<3>_1_5> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<5>_0_9> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<5>_1_9> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<0>_0_10> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<0>_1_10> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<3>_0_6> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<3>_1_6> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<0>_0_11> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<0>_1_11> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<3>_0_7> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<3>_1_7> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<3>_0_8> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<3>_1_8> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<3>_0_9> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<3>_1_9> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<0>_0_0> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<0>_1_0> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<0>_0_1> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<0>_1_1> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<4>_1_0> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<4>_0_0> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<5>_0_10> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<5>_1_10> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<0>_0_2> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<0>_1_2> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<4>_1_1> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<4>_0_1> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<5>_0_11> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<5>_1_11> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<0>_0_3> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<0>_1_3> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<4>_1_2> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<4>_0_2> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<0>_0_4> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<0>_1_4> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<4>_1_3> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<4>_0_3> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<0>_0_5> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<0>_1_5> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<4>_1_4> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<4>_0_4> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<1>_0_10> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<1>_1_10> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<0>_0_6> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<0>_1_6> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<4>_1_5> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<4>_0_5> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<1>_0_11> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<1>_1_11> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<0>_0_7> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<0>_1_7> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<4>_1_6> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<4>_0_6> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<1>_0_0> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<1>_1_0> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<0>_0_8> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<0>_1_8> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<4>_1_7> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<4>_0_7> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<1>_0_1> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<1>_1_1> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<0>_0_9> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<0>_1_9> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<4>_1_8> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<4>_0_8> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<1>_0_2> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<1>_1_2> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<4>_1_9> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<4>_0_9> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<1>_0_3> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<1>_1_3> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<1>_0_4> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<1>_1_4> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<1>_0_5> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<1>_1_5> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<1>_0_6> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<1>_1_6> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<1>_0_7> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<1>_1_7> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<3>_0_10> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<3>_1_10> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<1>_0_8> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<1>_1_8> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<3>_0_11> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<3>_1_11> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<1>_0_9> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<1>_1_9> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<2>_0_0> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<2>_1_0> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<2>_0_1> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<2>_1_1> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<2>_0_2> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<2>_1_2> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<2>_0_3> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<2>_1_3> 
+INFO:Xst:2261 - The FF/Latch <NullDurchagänge<2>_0_10> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <NullDurchagänge<2>_1_10> 
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <Sequenzer_0/FSM_0> on signal <Sequencing_State[1:3]> with one-hot encoding.
+----------------------
+ State    | Encoding
+----------------------
+ disabled | 001
+ running  | 010
+ over     | 100
+----------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <gen_Kanal[5].Kanali/DAC_0/FSM_1> on signal <SPI_Master_State[1:2]> with user encoding.
+Optimizing FSM <gen_Kanal[4].Kanali/DAC_0/FSM_1> on signal <SPI_Master_State[1:2]> with user encoding.
+Optimizing FSM <gen_Kanal[3].Kanali/DAC_0/FSM_1> on signal <SPI_Master_State[1:2]> with user encoding.
+Optimizing FSM <gen_Kanal[2].Kanali/DAC_0/FSM_1> on signal <SPI_Master_State[1:2]> with user encoding.
+Optimizing FSM <gen_Kanal[1].Kanali/DAC_0/FSM_1> on signal <SPI_Master_State[1:2]> with user encoding.
+Optimizing FSM <gen_Kanal[0].Kanali/DAC_0/FSM_1> on signal <SPI_Master_State[1:2]> with user encoding.
+------------------------------
+ State            | Encoding
+------------------------------
+ idle             | 00
+ data_tx          | 01
+ delay_for_le_h2l | unreached
+ delay_for_le_l2h | 11
+------------------------------
+
+Optimizing unit <FG_HW> ...
+
+Optimizing unit <Sequenzer> ...
+
+Optimizing unit <SPIMaster> ...
+
+Optimizing unit <PZ_PLL> ...
+
+Optimizing unit <PZ_div> ...
+WARNING:Xst:2677 - Node <KanalMaske_6> of sequential type is unconnected in block <FG_HW>.
+WARNING:Xst:2677 - Node <KanalMaske_7> of sequential type is unconnected in block <FG_HW>.
+WARNING:Xst:2677 - Node <KanalMaske_8> of sequential type is unconnected in block <FG_HW>.
+WARNING:Xst:2677 - Node <KanalMaske_9> of sequential type is unconnected in block <FG_HW>.
+WARNING:Xst:2677 - Node <KanalMaske_10> of sequential type is unconnected in block <FG_HW>.
+WARNING:Xst:2677 - Node <KanalMaske_11> of sequential type is unconnected in block <FG_HW>.
+WARNING:Xst:2677 - Node <KanalMaske_12> of sequential type is unconnected in block <FG_HW>.
+WARNING:Xst:2677 - Node <KanalMaske_13> of sequential type is unconnected in block <FG_HW>.
+WARNING:Xst:2677 - Node <KanalMaske_14> of sequential type is unconnected in block <FG_HW>.
+WARNING:Xst:2677 - Node <KanalMaske_15> of sequential type is unconnected in block <FG_HW>.
+WARNING:Xst:2677 - Node <SequenzSteuerRegister_1> of sequential type is unconnected in block <FG_HW>.
+WARNING:Xst:2677 - Node <SequenzSteuerRegister_4> of sequential type is unconnected in block <FG_HW>.
+WARNING:Xst:2677 - Node <SequenzSteuerRegister_6> of sequential type is unconnected in block <FG_HW>.
+WARNING:Xst:2677 - Node <SequenzSteuerRegister_7> of sequential type is unconnected in block <FG_HW>.
+WARNING:Xst:2677 - Node <SequenzSteuerRegister_8> of sequential type is unconnected in block <FG_HW>.
+WARNING:Xst:2677 - Node <SequenzSteuerRegister_9> of sequential type is unconnected in block <FG_HW>.
+WARNING:Xst:2677 - Node <SequenzSteuerRegister_10> of sequential type is unconnected in block <FG_HW>.
+WARNING:Xst:2677 - Node <SequenzSteuerRegister_11> of sequential type is unconnected in block <FG_HW>.
+WARNING:Xst:2677 - Node <SequenzSteuerRegister_12> of sequential type is unconnected in block <FG_HW>.
+WARNING:Xst:2677 - Node <SequenzSteuerRegister_13> of sequential type is unconnected in block <FG_HW>.
+WARNING:Xst:2677 - Node <SequenzSteuerRegister_14> of sequential type is unconnected in block <FG_HW>.
+WARNING:Xst:2677 - Node <SequenzSteuerRegister_15> of sequential type is unconnected in block <FG_HW>.
+WARNING:Xst:2677 - Node <PLL_1/run_div_i> of sequential type is unconnected in block <FG_HW>.
+WARNING:Xst:1293 - FF/Latch <PLL_1/Phi_steps_13> has a constant value of 0 in block <FG_HW>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PLL_1/Phi_steps_14> has a constant value of 0 in block <FG_HW>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PLL_1/Phi_steps_15> has a constant value of 0 in block <FG_HW>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PLL_1/Phi_steps_16> has a constant value of 0 in block <FG_HW>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PLL_1/Phi_steps_17> has a constant value of 0 in block <FG_HW>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PLL_1/Phi_steps_18> has a constant value of 0 in block <FG_HW>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PLL_1/Phi_steps_19> has a constant value of 0 in block <FG_HW>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PLL_1/Phi_steps_20> has a constant value of 0 in block <FG_HW>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PLL_1/Phi_steps_21> has a constant value of 0 in block <FG_HW>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PLL_1/Phi_steps_22> has a constant value of 0 in block <FG_HW>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PLL_1/Phi_steps_23> has a constant value of 0 in block <FG_HW>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PLL_1/Phi_steps_24> has a constant value of 0 in block <FG_HW>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PLL_1/Phi_steps_25> has a constant value of 0 in block <FG_HW>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PLL_1/Phi_steps_26> has a constant value of 0 in block <FG_HW>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PLL_1/Phi_steps_27> has a constant value of 0 in block <FG_HW>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PLL_1/Phi_steps_28> has a constant value of 0 in block <FG_HW>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PLL_1/Phi_steps_29> has a constant value of 0 in block <FG_HW>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PLL_1/Phi_steps_30> has a constant value of 0 in block <FG_HW>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PLL_1/Phi_steps_31> has a constant value of 0 in block <FG_HW>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PLL_1/Phi_steps_32> has a constant value of 0 in block <FG_HW>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PLL_1/Phi_steps_33> has a constant value of 0 in block <FG_HW>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PLL_1/Phi_steps_34> has a constant value of 0 in block <FG_HW>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PLL_1/Phi_steps_35> has a constant value of 0 in block <FG_HW>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PLL_1/Gesamt_Counter_34> has a constant value of 0 in block <FG_HW>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PLL_1/Gesamt_Counter_35> has a constant value of 0 in block <FG_HW>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <counter_SCLK_3> has a constant value of 0 in block <FG_HW>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <Pulse_1ms.pulse_Counter_0> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <PLL_1/T_clk_count_0> 
+INFO:Xst:2261 - The FF/Latch <Pulse_1ms.pulse_Counter_1> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <PLL_1/T_clk_count_1> 
+INFO:Xst:2261 - The FF/Latch <Pulse_1ms.pulse_Counter_2> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <PLL_1/T_clk_count_2> 
+INFO:Xst:2261 - The FF/Latch <Pulse_1ms.pulse_Counter_3> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <PLL_1/T_clk_count_3> 
+INFO:Xst:2261 - The FF/Latch <Pulse_1ms.pulse_Counter_4> in Unit <FG_HW> is equivalent to the following FF/Latch, which will be removed : <PLL_1/T_clk_count_4> 
+INFO:Xst:2261 - The FF/Latch <gen_Kanal[0].Kanali/DAC_0/SPI_LE_OUT> in Unit <FG_HW> is equivalent to the following 5 FFs/Latches, which will be removed : <gen_Kanal[1].Kanali/DAC_0/SPI_LE_OUT> <gen_Kanal[2].Kanali/DAC_0/SPI_LE_OUT> <gen_Kanal[3].Kanali/DAC_0/SPI_LE_OUT> <gen_Kanal[4].Kanali/DAC_0/SPI_LE_OUT> <gen_Kanal[5].Kanali/DAC_0/SPI_LE_OUT> 
+INFO:Xst:2261 - The FF/Latch <gen_Kanal[0].Kanali/DAC_0/bit_to_Transfer_0> in Unit <FG_HW> is equivalent to the following 5 FFs/Latches, which will be removed : <gen_Kanal[1].Kanali/DAC_0/bit_to_Transfer_0> <gen_Kanal[2].Kanali/DAC_0/bit_to_Transfer_0> <gen_Kanal[3].Kanali/DAC_0/bit_to_Transfer_0> <gen_Kanal[4].Kanali/DAC_0/bit_to_Transfer_0> <gen_Kanal[5].Kanali/DAC_0/bit_to_Transfer_0> 
+INFO:Xst:2261 - The FF/Latch <gen_Kanal[0].Kanali/DAC_0/bit_to_Transfer_1> in Unit <FG_HW> is equivalent to the following 5 FFs/Latches, which will be removed : <gen_Kanal[1].Kanali/DAC_0/bit_to_Transfer_1> <gen_Kanal[2].Kanali/DAC_0/bit_to_Transfer_1> <gen_Kanal[3].Kanali/DAC_0/bit_to_Transfer_1> <gen_Kanal[4].Kanali/DAC_0/bit_to_Transfer_1> <gen_Kanal[5].Kanali/DAC_0/bit_to_Transfer_1> 
+INFO:Xst:2261 - The FF/Latch <gen_Kanal[0].Kanali/DAC_0/bit_to_Transfer_2> in Unit <FG_HW> is equivalent to the following 5 FFs/Latches, which will be removed : <gen_Kanal[1].Kanali/DAC_0/bit_to_Transfer_2> <gen_Kanal[2].Kanali/DAC_0/bit_to_Transfer_2> <gen_Kanal[3].Kanali/DAC_0/bit_to_Transfer_2> <gen_Kanal[4].Kanali/DAC_0/bit_to_Transfer_2> <gen_Kanal[5].Kanali/DAC_0/bit_to_Transfer_2> 
+INFO:Xst:2261 - The FF/Latch <gen_Kanal[0].Kanali/DAC_0/bit_to_Transfer_3> in Unit <FG_HW> is equivalent to the following 5 FFs/Latches, which will be removed : <gen_Kanal[1].Kanali/DAC_0/bit_to_Transfer_3> <gen_Kanal[2].Kanali/DAC_0/bit_to_Transfer_3> <gen_Kanal[3].Kanali/DAC_0/bit_to_Transfer_3> <gen_Kanal[4].Kanali/DAC_0/bit_to_Transfer_3> <gen_Kanal[5].Kanali/DAC_0/bit_to_Transfer_3> 
+INFO:Xst:2261 - The FF/Latch <gen_Kanal[0].Kanali/DAC_0/bit_to_Transfer_4> in Unit <FG_HW> is equivalent to the following 5 FFs/Latches, which will be removed : <gen_Kanal[1].Kanali/DAC_0/bit_to_Transfer_4> <gen_Kanal[2].Kanali/DAC_0/bit_to_Transfer_4> <gen_Kanal[3].Kanali/DAC_0/bit_to_Transfer_4> <gen_Kanal[4].Kanali/DAC_0/bit_to_Transfer_4> <gen_Kanal[5].Kanali/DAC_0/bit_to_Transfer_4> 
+INFO:Xst:2261 - The FF/Latch <gen_Kanal[0].Kanali/DAC_0/SPI_Master_State_FSM_FFd1> in Unit <FG_HW> is equivalent to the following 5 FFs/Latches, which will be removed : <gen_Kanal[1].Kanali/DAC_0/SPI_Master_State_FSM_FFd1> <gen_Kanal[2].Kanali/DAC_0/SPI_Master_State_FSM_FFd1> <gen_Kanal[3].Kanali/DAC_0/SPI_Master_State_FSM_FFd1> <gen_Kanal[4].Kanali/DAC_0/SPI_Master_State_FSM_FFd1> <gen_Kanal[5].Kanali/DAC_0/SPI_Master_State_FSM_FFd1> 
+INFO:Xst:2261 - The FF/Latch <gen_Kanal[0].Kanali/DAC_0/SPI_Master_State_FSM_FFd2> in Unit <FG_HW> is equivalent to the following 5 FFs/Latches, which will be removed : <gen_Kanal[1].Kanali/DAC_0/SPI_Master_State_FSM_FFd2> <gen_Kanal[2].Kanali/DAC_0/SPI_Master_State_FSM_FFd2> <gen_Kanal[3].Kanali/DAC_0/SPI_Master_State_FSM_FFd2> <gen_Kanal[4].Kanali/DAC_0/SPI_Master_State_FSM_FFd2> <gen_Kanal[5].Kanali/DAC_0/SPI_Master_State_FSM_FFd2> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block FG_HW, actual ratio is 8.
+FlipFlop PLL_1/Gesamt_Counter_21 has been replicated 2 time(s)
+FlipFlop PLL_1/Gesamt_Counter_22 has been replicated 1 time(s)
+FlipFlop PLL_1/Gesamt_Counter_23 has been replicated 2 time(s)
+FlipFlop PLL_1/Gesamt_Counter_24 has been replicated 1 time(s)
+FlipFlop PLL_1/Gesamt_Counter_25 has been replicated 1 time(s)
+FlipFlop PLL_1/Gesamt_Counter_26 has been replicated 1 time(s)
+FlipFlop PLL_1/Gesamt_Counter_27 has been replicated 2 time(s)
+FlipFlop PLL_1/Gesamt_Counter_28 has been replicated 1 time(s)
+FlipFlop PLL_1/Gesamt_Counter_29 has been replicated 1 time(s)
+FlipFlop PLL_1/Gesamt_Counter_30 has been replicated 2 time(s)
+FlipFlop PLL_1/Gesamt_Counter_31 has been replicated 2 time(s)
+FlipFlop PLL_1/Gesamt_Counter_32 has been replicated 2 time(s)
+FlipFlop Sequenzer_0/Kurvenauswahl_0_1 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 715
+ Flip-Flops                                            : 715
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : FG_HW.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 1674
+#      GND                         : 1
+#      INV                         : 11
+#      LUT1                        : 162
+#      LUT2                        : 87
+#      LUT3                        : 95
+#      LUT4                        : 289
+#      LUT5                        : 147
+#      LUT6                        : 335
+#      MUXCY                       : 271
+#      MUXF7                       : 17
+#      MUXF8                       : 6
+#      VCC                         : 1
+#      XORCY                       : 252
+# FlipFlops/Latches                : 715
+#      FD                          : 154
+#      FD_1                        : 3
+#      FDE                         : 304
+#      FDE_1                       : 107
+#      FDR                         : 21
+#      FDRE                        : 126
+# RAMS                             : 49
+#      RAMB16BWER                  : 49
+# Clock Buffers                    : 2
+#      BUFG                        : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 68
+#      IBUF                        : 55
+#      OBUF                        : 13
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx25fgg484-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             715  out of  30064     2%  
+ Number of Slice LUTs:                 1126  out of  15032     7%  
+    Number used as Logic:              1126  out of  15032     7%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   1321
+   Number with an unused Flip Flop:     606  out of   1321    45%  
+   Number with an unused LUT:           195  out of   1321    14%  
+   Number of fully used LUT-FF pairs:   520  out of   1321    39%  
+   Number of unique control sets:        38
+
+IO Utilization: 
+ Number of IOs:                         103
+ Number of bonded IOBs:                  69  out of    266    25%  
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:               49  out of     52    94%  
+    Number using Block RAM only:         49
+ Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+Clock_100MHz_IN                    | BUFGP                  | 654   |
+SPI_SCLK                           | BUFG                   | 110   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 7.016ns (Maximum Frequency: 142.526MHz)
+   Minimum input arrival time before clock: 10.066ns
+   Maximum output required time after clock: 4.346ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'Clock_100MHz_IN'
+  Clock period: 7.016ns (frequency: 142.526MHz)
+  Total number of paths / destination ports: 42366 / 1418
+-------------------------------------------------------------------------
+Delay:               7.016ns (Levels of Logic = 38)
+  Source:            PLL_1/Phase_count_6 (FF)
+  Destination:       PLL_1/Phi_steps_i_33 (FF)
+  Source Clock:      Clock_100MHz_IN rising
+  Destination Clock: Clock_100MHz_IN rising
+
+  Data Path: PLL_1/Phase_count_6 to PLL_1/Phi_steps_i_33
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              2   0.525   1.181  PLL_1/Phase_count_6 (PLL_1/Phase_count_6)
+     LUT6:I0->O           13   0.254   1.206  PLL_1/Phase_count[17]_GND_10_o_LessThan_32_o22 (PLL_1/Phase_count[17]_GND_10_o_LessThan_32_o21)
+     LUT6:I4->O            1   0.250   0.682  PLL_1/Phase_count[17]_GND_10_o_LessThan_32_o23_1 (PLL_1/Phase_count[17]_GND_10_o_LessThan_32_o23)
+     LUT3:I2->O            1   0.254   0.681  PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_AS11 (PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_AS1)
+     MUXCY:CI->O           1   0.023   0.000  PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<0> (PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<1> (PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<2> (PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<3> (PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<4> (PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<5> (PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<6> (PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<7> (PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<8> (PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<9> (PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<10> (PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<11> (PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<12> (PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<13> (PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<13>)
+     MUXCY:CI->O           1   0.023   0.000  PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<14> (PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<14>)
+     MUXCY:CI->O           1   0.023   0.000  PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<15> (PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<15>)
+     MUXCY:CI->O           1   0.023   0.000  PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<16> (PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<16>)
+     MUXCY:CI->O           1   0.023   0.000  PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<17> (PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<17>)
+     MUXCY:CI->O           1   0.023   0.000  PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<18> (PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<18>)
+     MUXCY:CI->O           1   0.023   0.000  PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<19> (PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<19>)
+     MUXCY:CI->O           1   0.023   0.000  PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<20> (PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<20>)
+     MUXCY:CI->O           1   0.023   0.000  PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<21> (PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<21>)
+     MUXCY:CI->O           1   0.023   0.000  PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<22> (PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<22>)
+     MUXCY:CI->O           1   0.023   0.000  PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<23> (PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<23>)
+     MUXCY:CI->O           1   0.023   0.000  PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<24> (PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<24>)
+     MUXCY:CI->O           1   0.023   0.000  PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<25> (PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<25>)
+     MUXCY:CI->O           1   0.023   0.000  PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<26> (PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<26>)
+     MUXCY:CI->O           1   0.023   0.000  PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<27> (PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<27>)
+     MUXCY:CI->O           1   0.023   0.000  PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<28> (PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<28>)
+     MUXCY:CI->O           1   0.023   0.000  PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<29> (PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<29>)
+     MUXCY:CI->O           1   0.023   0.000  PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<30> (PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<30>)
+     MUXCY:CI->O           1   0.023   0.000  PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<31> (PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<31>)
+     MUXCY:CI->O           1   0.023   0.000  PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<32> (PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_cy<32>)
+     XORCY:CI->O           1   0.206   0.682  PLL_1/Mmux_GND_10_o_Phi_steps_soll[35]_mux_40_OUT_rs_xor<33> (PLL_1/GND_10_o_Phi_steps_soll[35]_mux_40_OUT<33>)
+     LUT5:I4->O            1   0.254   0.000  PLL_1/Phi_steps_i_33_dpot (PLL_1/Phi_steps_i_33_dpot)
+     FDE:D                     0.074          PLL_1/Phi_steps_i_33
+    ----------------------------------------
+    Total                      7.016ns (2.584ns logic, 4.432ns route)
+                                       (36.8% logic, 63.2% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'SPI_SCLK'
+  Clock period: 4.930ns (frequency: 202.827MHz)
+  Total number of paths / destination ports: 522 / 121
+-------------------------------------------------------------------------
+Delay:               4.930ns (Levels of Logic = 2)
+  Source:            gen_Kanal[0].Kanali/DAC_0/bit_to_Transfer_1 (FF)
+  Destination:       gen_Kanal[0].Kanali/DAC_0/bit_to_Transfer_4 (FF)
+  Source Clock:      SPI_SCLK falling
+  Destination Clock: SPI_SCLK falling
+
+  Data Path: gen_Kanal[0].Kanali/DAC_0/bit_to_Transfer_1 to gen_Kanal[0].Kanali/DAC_0/bit_to_Transfer_4
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE_1:C->Q           31   0.525   1.779  gen_Kanal[0].Kanali/DAC_0/bit_to_Transfer_1 (gen_Kanal[0].Kanali/DAC_0/bit_to_Transfer_1)
+     LUT5:I1->O            9   0.254   0.976  gen_Kanal[0].Kanali/DAC_0/SPI_Master_State[1]_PWR_21_o_Mux_12_o11 (gen_Kanal[0].Kanali/DAC_0/SPI_Master_State[1]_PWR_21_o_Mux_12_o1)
+     LUT3:I2->O            5   0.254   0.840  gen_Kanal[0].Kanali/DAC_0/_n0057_inv1 (gen_Kanal[0].Kanali/DAC_0/_n0057_inv)
+     FDE_1:CE                  0.302          gen_Kanal[0].Kanali/DAC_0/bit_to_Transfer_0
+    ----------------------------------------
+    Total                      4.930ns (1.335ns logic, 3.595ns route)
+                                       (27.1% logic, 72.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'Clock_100MHz_IN'
+  Total number of paths / destination ports: 5377 / 1693
+-------------------------------------------------------------------------
+Offset:              10.066ns (Levels of Logic = 6)
+  Source:            WriteAddr_IN<7> (PAD)
+  Destination:       NullDurchagänge<5>_0_0 (FF)
+  Destination Clock: Clock_100MHz_IN rising
+
+  Data Path: WriteAddr_IN<7> to NullDurchagänge<5>_0_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            50   1.328   2.276  WriteAddr_IN_7_IBUF (WriteAddr_IN_7_IBUF)
+     LUT6:I0->O            1   0.254   1.137  _n0442_inv62 (_n0442_inv61)
+     LUT6:I0->O            1   0.254   0.682  _n0442_inv64_SW0 (N150)
+     LUT6:I5->O            2   0.254   0.834  _n0442_inv64 (_n0442_inv_bdd4)
+     LUT3:I1->O           12   0.250   1.177  _n0472_inv71 (_n0472_inv_bdd6)
+     LUT5:I3->O           12   0.250   1.068  _n0582_inv11 (_n0582_inv)
+     FDE:CE                    0.302          NullDurchagänge<2>_2_0
+    ----------------------------------------
+    Total                     10.066ns (2.892ns logic, 7.174ns route)
+                                       (28.7% logic, 71.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'SPI_SCLK'
+  Total number of paths / destination ports: 12 / 12
+-------------------------------------------------------------------------
+Offset:              4.346ns (Levels of Logic = 1)
+  Source:            gen_Kanal[0].Kanali/DAC_0/SPI_LE_OUT (FF)
+  Destination:       SPI_LE_OUT<5> (PAD)
+  Source Clock:      SPI_SCLK falling
+
+  Data Path: gen_Kanal[0].Kanali/DAC_0/SPI_LE_OUT to SPI_LE_OUT<5>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD_1:C->Q             7   0.525   0.909  gen_Kanal[0].Kanali/DAC_0/SPI_LE_OUT (gen_Kanal[0].Kanali/DAC_0/SPI_LE_OUT)
+     OBUF:I->O                 2.912          SPI_LE_OUT_5_OBUF (SPI_LE_OUT<5>)
+    ----------------------------------------
+    Total                      4.346ns (3.437ns logic, 0.909ns route)
+                                       (79.1% logic, 20.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'Clock_100MHz_IN'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              4.162ns (Levels of Logic = 1)
+  Source:            SPI_SCLK (FF)
+  Destination:       SCLK_OUT (PAD)
+  Source Clock:      Clock_100MHz_IN rising
+
+  Data Path: SPI_SCLK to SCLK_OUT
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.525   0.725  SPI_SCLK (SPI_SCLK)
+     OBUF:I->O                 2.912          SCLK_OUT_OBUF (SCLK_OUT)
+    ----------------------------------------
+    Total                      4.162ns (3.437ns logic, 0.725ns route)
+                                       (82.6% logic, 17.4% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock Clock_100MHz_IN
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+Clock_100MHz_IN|    7.016|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock SPI_SCLK
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+Clock_100MHz_IN|         |         |    4.763|         |
+SPI_SCLK       |         |         |    4.930|         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 24.00 secs
+Total CPU time to Xst completion: 24.69 secs
+ 
+--> 
+
+Total memory usage is 214800 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  178 (   0 filtered)
+Number of infos    :   99 (   0 filtered)
+

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/Anuja/FG_HW/testbench_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="fg_pack" />
+            <top_module name="math_real" />
+            <top_module name="numeric_std" />
+            <top_module name="std_logic_1164" />
+            <top_module name="std_logic_arith" />
+            <top_module name="std_logic_signed" />
+            <top_module name="std_logic_textio" />
+            <top_module name="std_logic_unsigned" />
+            <top_module name="testbench" />
+            <top_module name="textio" />
+            <top_module name="vcomponents" />
+            <top_module name="vital_primitives" />
+            <top_module name="vital_timing" />
+            <top_module name="vpkg" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="9" />
+   <wvobject fp_name="/testbench/clock_100mhz" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clock_100mhz</obj_property>
+      <obj_property name="ObjectShortName">clock_100mhz</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/clock_50hz" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clock_50hz</obj_property>
+      <obj_property name="ObjectShortName">clock_50hz</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/phase" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">phase[11:0]</obj_property>
+      <obj_property name="ObjectShortName">phase[11:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/sample" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">sample[15:0]</obj_property>
+      <obj_property name="ObjectShortName">sample[15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/kurveselect" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">kurveselect</obj_property>
+      <obj_property name="ObjectShortName">kurveselect</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/ramwritedata" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">ramwritedata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ramwritedata[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/ramaddr" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">ramaddr[19:0]</obj_property>
+      <obj_property name="ObjectShortName">ramaddr[19:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/ram_we" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ram_we</obj_property>
+      <obj_property name="ObjectShortName">ram_we</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/ram_ce" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ram_ce</obj_property>
+      <obj_property name="ObjectShortName">ram_ce</obj_property>
+   </wvobject>
+</wave_config>

@@ -1,0 +1,20 @@
+M:\Zusammenarbeit\Transferordner\EW\DKU\test_link_data\test_link_data1\docx_data\Abt-TB-2021-05-03.docx, HYPERLINK "\\\\s-zera-stor01\\data1\\Mitarbeiter\\Regeln\\Arbeitsanweisungen\\Allgemein\\AA-Reisemanagement.docx" 
+M:\Zusammenarbeit\Transferordner\EW\DKU\test_link_data\test_link_data1\docx_data\Abt-TB-2021-05-03.docx,\\s-zera-stor01\data1\Mitarbeiter\Regeln\Arbeitsanweisungen\Allgemein\AA-Reisemanagement
+M:\Zusammenarbeit\Transferordner\EW\DKU\test_link_data\test_link_data1\docx_data\Abt-TB-2021-05-03.docx,\\s-zera-stor01\data1\Mitarbeiter\Regeln\Prozessbeschreibungen\Unterst�tzende Prozesse\PB-EDV.doc
+M:\Zusammenarbeit\Transferordner\EW\DKU\test_link_data\test_link_data1\docx_data\Abt-TB-2021-05-03.docx,\\s-zera-stor01\data1\Mitarbeiter\Anwenden\Vorlagen & Formbl�tter\Arbeitsschutz\FB 34 Merkblatt Besucher-COVID-19 .
+M:\Zusammenarbeit\Transferordner\EW\DKU\test_link_data\test_link_data1\docx_data\Besprechung_EWHardware_2020_08-18.docx,\\s-zera-stor01\Data\DIN ISO 9000\Arbeitsanweisungen\AA-Allgemein\AA-Reisenachbearbeitung 1.00-24.07.2020.docx
+M:\Zusammenarbeit\Transferordner\EW\DKU\test_link_data\test_link_data1\docx_data\Besprechung_EWHardware_2020_08-18.docx,\\s-zera-stor01\data1
+M:\Zusammenarbeit\Transferordner\EW\DKU\test_link_data\test_link_data1\docx_data\Besprechung_EWHardware_2020_08-18.docx,\\s-zera-stor01\data1\Abteilungen\Entwicklung\Hardware
+M:\Zusammenarbeit\Transferordner\EW\DKU\test_link_data\test_link_data1\docx_data\Besprechung_EWHardware_2020_08-18.docx,\\s-zera-stor01\data1\Mitarbeiter\Wissen
+M:\Zusammenarbeit\Transferordner\EW\DKU\test_link_data\test_link_data1\docx_data\Besprechung_EWHardware_2020_08-18.docx,\\s-zera-stor01\data1\Abteilungen\Entwicklung\Hardware
+M:\Zusammenarbeit\Transferordner\EW\DKU\test_link_data\test_link_data1\docx_data\Besprechung_EWHardware_2020_08-18.docx,\\s-zera-stor01\data1\Abteilungen\Entwicklung\Hardware
+M:\Zusammenarbeit\Transferordner\EW\DKU\test_link_data\test_link_data1\docx_data\Besprechung_EWHardware_2022-02-01.docx,\\s-zera-stor01\data1\Mitarbeiter\Regeln\Betriebsvereinbarungen\Nr.14_22 Urlaubs- und Gleittageregelung.pdf
+M:\Zusammenarbeit\Transferordner\EW\DKU\test_link_data\test_link_data1\docx_data\Besprechung_EWHardware_2022-02-01.docx,\\s-zera-stor01\data1\Zusammenarbeit\VT\VT-ZY-PE\KnowHow\_Themensammlung.xlsx
+M:\Zusammenarbeit\Transferordner\EW\DKU\test_link_data\test_link_data1\docx_data\Liste f�r Fertigungszeiten aktualisieren.docx,\\s-zera-stor01\data1\Zusammenarbeit\Auslieferungsliste\Fertigungszeiten\Aktuelle Daten.xlsm
+M:\Zusammenarbeit\Transferordner\EW\DKU\test_link_data\test_link_data1\docx_data\Schulung WM3000.docx,\\s-zera-stor01\Data\EntwHard\Firm-Hardware-Daten\56
+M:\Zusammenarbeit\Transferordner\EW\DKU\test_link_data\test_link_data1\docx_data\Schulung WM3000.docx,\\s-zera-stor01\Data\EntwHard\Firm-Hardware-Daten\5660\WM3
+M:\Zusammenarbeit\Transferordner\EW\DKU\test_link_data\test_link_data1\docx_data\Schulung WM3000.docx,\\s-zera-stor01\Data\EntwHard\Firm-Hardware-Daten\5660\WM3000-I Messkarte\EW_DOC\PF-Schulung\WM3000I-Abgleichkonzept2011-09-06.pdf
+M:\Zusammenarbeit\Transferordner\EW\DKU\test_link_data\test_link_data1\docx_data\Schulung WM3000.docx,\\s-zera-stor01\Data\EntwHard\Firm-Hardware-Daten\5660\WM3000-I Messkarte\EW_DOC\PF-Schulung\ADW5660H Signalverlauf MODE1 bis MODE3.pdf
+M:\Zusammenarbeit\Transferordner\EW\DKU\test_link_data\test_link_data1\docx_data\Schulung WM3000.docx,\\s-zera-stor01\Data\EntwHard\Firm-Hardware-Daten\5660\WM3000-I Messkarte\EW_DOC\PF-Schulung\WM3000U-Abgleichkonzept2008-12-11.pdf
+M:\Zusammenarbeit\Transferordner\EW\DKU\test_link_data\test_link_data1\docx_data\Schulung WM3000.docx,\\s-zera-stor01\Data\EntwHard\Firm-Hardware-Daten\5660\WM3000-I Messkarte\EW_DOC\PF-Schulung\WM3000I-ECT-Wandler-Pr�fling.pdf
+M:\Zusammenarbeit\Transferordner\EW\DKU\test_link_data\test_link_data1\docx_data\test_for_brocken\Liste f�r Fertigungszeiten aktualisieren.docx,\\s-zera-stor01\data1
